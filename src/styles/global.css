@@ -1,0 +1,90 @@
+@import "tailwindcss";
+
+:root {
+  --brand-navy: #1B3664;
+  --brand-navy-dark: #13274a;
+  --brand-green: #5ab426;
+  --brand-green-light: #82cc56;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    color: var(--brand-navy);
+  }
+
+/* Custom Utility Classes */
+.text-brand-navy { color: var(--brand-navy); }
+.bg-brand-navy { background-color: var(--brand-navy); }
+.hover\:bg-brand-navy-dark:hover { background-color: var(--brand-navy-dark); }
+
+.text-brand-green { color: var(--brand-green); }
+.bg-brand-green { background-color: var(--brand-green); }
+.hover\:text-brand-green:hover { color: var(--brand-green); }
+
+.text-brand-gold { color: var(--brand-gold-bright); }
+/* src/styles/global.css */
+
+/* src/styles/global.css */
+
+.service-card {
+  transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.4s ease;
+}
+
+/* Now this ONLY handles the lift, no conflict with 'reveal' */
+.service-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 30px 60px -12px rgba(27, 54, 100, 0.2);
+}
+
+/* Icon Border */
+.icon-box {
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.service-card:hover .icon-box {
+  border-color: var(--brand-green) !important;
+}
+
+/* Image Zoom */
+.service-img {
+  transition: transform 0.5s ease;
+}
+
+.social-link {
+  background-color: rgba(255, 255, 255, 0.1);
+  color: white;
+  transition: all 0.2s ease;
+}
+
+/* Hover State: Navy icon on Green circle */
+.social-link:hover {
+  background-color: var(--brand-green) ;
+  color: var(--brand-navy) ;
+  
+}
+
+/* Ensure the SVG inside always inherits the link color */
+.social-link svg {
+  fill: currentColor;
+}
+
+/* Add this to your global.css or <style> block */
+
+.mobile-link {
+  position: relative;
+  display: inline-block;
+}
+
+/* The Underline effect from your reference image */
+.mobile-link:active::after, 
+.mobile-link:focus::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--brand-green);
+}

@@ -1,0 +1,72 @@
+---
+import '../styles/global.css';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro'; // Assuming you have a Footer component
+
+interface Props { title: string; }
+const { title } = Astro.props;
+---
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+        <title>{title}</title>
+    </head>
+    <body class="bg-white text-gray-900 overflow-x-hidden">
+        
+        <Navbar />
+
+        <main>
+            <slot /> </main>
+
+        <Footer />
+
+        <script is:inline>
+            // Animation logic
+            const observerOptions = { threshold: 0.1 };
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, observerOptions);
+
+            // This function helps re-run the observer if content changes
+            function observeElements() {
+                document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+            }
+            
+            observeElements();
+        </script>
+    </body>
+</html>
+
+<style is:global>
+    :root {
+        --brand-navy: #1B3664;
+        --brand-green: #71BF44;
+    }
+
+    body {
+        font-family: 'Inter', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        color: var(--brand-navy);
+    }
+
+    .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.2, 0.8, 0.2, 1);
+    }
+
+    .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>

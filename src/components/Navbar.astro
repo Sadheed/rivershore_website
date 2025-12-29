@@ -1,0 +1,93 @@
+---
+const pathname = new URL(Astro.url).pathname;
+const currentPath = pathname.slice(1); 
+---
+
+<nav class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center">
+    
+    <a href="/" class="flex items-center transition hover:opacity-90">
+      <img src="/logo.png" alt="Rivershore Trading Logo" class="h-20 md:h-28 w-auto object-contain" />
+    </a>
+
+    <ul class="hidden md:flex space-x-8 text-xs font-bold uppercase tracking-[0.2em]">
+      <li><a href="/" class={`nav-link text-brand-navy ${pathname === "/" ? "active-link" : ""}`}>Home</a></li>
+      <li><a href="/about" class={`nav-link text-brand-navy ${currentPath === "about" ? "active-link" : ""}`}>About</a></li>
+      <li><a href="/services" class={`nav-link text-brand-navy ${currentPath.includes("services") ? "active-link" : ""}`}>Services</a></li>
+      <li><a href="/contact" class={`nav-link text-brand-navy ${currentPath === "contact" ? "active-link" : ""}`}>Contact</a></li>
+    </ul>
+
+    <button id="menu-btn" class="md:hidden text-brand-navy p-2 focus:outline-none">
+      <svg id="menu-icon" class="w-8 h-8 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+      </svg>
+    </button>
+
+    <a href="/contact" class="hidden md:block bg-brand-navy text-white px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-brand-navy-dark transition-all">
+      Get Started
+    </a>
+  </div>
+
+  <div id="mobile-dropdown" class="hidden md:hidden bg-white border-t border-gray-50 overflow-hidden">
+    <div class="px-8 py-8 flex flex-col items-end space-y-6 text-right">
+      <a href="/" class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${pathname === "/" ? "active-mobile" : ""}`}>Home</a>
+      <a href="/about" class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${currentPath === "about" ? "active-mobile" : ""}`}>About Us</a>
+      
+      <div class="flex flex-col items-end">
+        <button id="submenu-toggle" class={`flex justify-end items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-navy ${currentPath.includes("services") ? "active-mobile" : ""}`}>
+          <svg class="w-4 h-4 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"/></svg>
+          Services
+        </button>
+        
+        <div id="submenu" class="hidden flex flex-col pr-4 mt-4 space-y-4 border-r-2 border-brand-green/30 text-right">
+          <a href="/services/materials" class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "services/supply" ? "text-brand-green" : "text-brand-navy/60"}`}>Building Supply</a>
+          <a href="/services/maintenance" class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "services/maintenance" ? "text-brand-green" : "text-brand-navy/60"}`}>Maintenance</a>
+          <a href="/services/trading" class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "services/trading" ? "text-brand-green" : "text-brand-navy/60"}`}>Scrap Trading</a>
+        </div>
+      </div>
+
+      <a href="/contact" class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${currentPath === "contact" ? "active-mobile" : ""}`}>Contact</a>
+    </div>
+  </div>
+</nav>
+
+<style>
+  .nav-link, .mobile-link { position: relative; padding-bottom: 2px; }
+
+  /* Desktop Underline */
+  .active-link::after {
+    content: ''; position: absolute; bottom: -6px; left: 0; width: 100%; height: 2px; background-color: var(--brand-green);
+  }
+
+  /* Mobile Underline (Right Aligned) */
+  .active-mobile::after {
+    content: ''; position: absolute; bottom: -4px; right: 0; /* Changed left:0 to right:0 */
+    width: 24px; height: 2px; background-color: var(--brand-green);
+  }
+</style>
+
+<script>
+  // Use DOMContentLoaded to prevent "null" issues and use optional chaining ?.
+  document.addEventListener('DOMContentLoaded', () => {
+    const menuBtn = document.getElementById('menu-btn');
+    const menuIcon = document.getElementById('menu-icon');
+    const dropdown = document.getElementById('mobile-dropdown');
+    const submenuToggle = document.getElementById('submenu-toggle');
+    const submenu = document.getElementById('submenu');
+
+    menuBtn?.addEventListener('click', () => {
+      dropdown?.classList.toggle('hidden');
+      if (menuIcon) {
+        menuIcon.style.transform = dropdown?.classList.contains('hidden') ? "rotate(0deg)" : "rotate(90deg)";
+      }
+    });
+
+    submenuToggle?.addEventListener('click', () => {
+      submenu?.classList.toggle('hidden');
+      const arrow = submenuToggle?.querySelector('svg');
+      if (arrow) {
+        arrow.style.transform = submenu?.classList.contains('hidden') ? "rotate(0deg)" : "rotate(180deg)";
+      }
+    });
+  });
+</script>
