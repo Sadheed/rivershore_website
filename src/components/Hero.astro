@@ -1,43 +1,41 @@
-<section class="relative h-screen flex flex-col items-center justify-center overflow-hidden">
+---
+import { Image } from 'astro:assets';
+import homeBg from '../assets/homebg11.jpg'; 
+---
+<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-brand-navy pt-32">
   
   <div class="absolute inset-0 z-0">
-    <img src="../../homebg.webp" 
-         class="w-full h-full object-cover scale-105 transition-all duration-[20s] grayscale-[30%] brightness-[40%]" 
-         alt="Rivershore Trading Hero Background" />
-    
+    <Image 
+      src={homeBg} 
+      class="w-full h-full object-cover grayscale-[10%] brightness-[35%]" 
+      alt="Industrial Supply Qatar"
+      loading="eager"
+    />
     <div class="absolute inset-0 bg-brand-navy/60 mix-blend-multiply"></div>
-    <div class="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-brand-navy/80"></div>
   </div>
 
-  <div class="relative z-10 text-center px-4 max-w-5xl reveal">
+  <div class="relative z-20 text-center px-6 max-w-6xl">
     
-    <span class="block text-brand-green font-bold tracking-[0.4em] uppercase text-[10px] mb-6 opacity-90">
-      Global Industrial Standards
+    <span class="block text-brand-green font-bold tracking-[0.5em] uppercase text-[10px] md:text-[12px] mb-8">
+      Qatar's Premier Industrial Partner
     </span>
 
-    <h1 class="text-5xl md:text-8xl font-black text-white mb-8 leading-[0.95] tracking-tighter uppercase">
-      Precision <br/> 
-      <span class="text-transparent" style="-webkit-text-stroke: 1px rgba(255,255,255,0.6);">Infrastructure</span>
+    <h1 class="text-5xl md:text-[90px] font-bold text-white mb-10 leading-[0.85] tracking-tighter uppercase ">
+      BUILDING <br/> 
+      <span class="text-transparent" style="-webkit-text-stroke: 1.5px rgba(255,255,255,0.8);">SUPPLY SOLUTIONS and MAINTENANCE</span>
     </h1>
 
-    <p class="text-sm md:text-base text-white/60 mb-12 max-w-lg mx-auto font-medium uppercase tracking-[0.1em] leading-relaxed">
-      Your trusted partner in building materials, facility management, and sustainable industrial trading.
+    <p class="text-sm md:text-lg text-white/70 mb-14 max-w-2xl mx-auto font-medium uppercase tracking-[0.1em] leading-relaxed">
+      Specialized in supplying Building Materials and their maintenance, MEP Trading, <br class="hidden md:block"/> 
+      and Professional Scrap Management.
     </p>
 
-    <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+    <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
       <a href="#services" 
-         class="group relative overflow-hidden bg-brand-green text-brand-navy px-12 py-4 rounded-full font-bold uppercase text-[10px] tracking-widest transition-all hover:bg-white hover:px-14">
+         class="bg-brand-green text-brand-navy px-14 py-4 rounded-md font-extrabold uppercase text-[11px] tracking-widest transition-all hover:bg-white shadow-xl">
         Our Services
       </a>
-      <a href="#about" 
-         class="text-white border-b border-white/30 pb-1 text-[10px] font-bold uppercase tracking-widest hover:text-brand-green hover:border-brand-green transition-all">
-        Learn More
-      </a>
     </div>
-  </div>
-
-  <div class="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 opacity-30">
-    <div class="w-[1px] h-16 bg-gradient-to-b from-white to-transparent"></div>
   </div>
 
 </section>
