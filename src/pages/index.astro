@@ -1,72 +1,21 @@
 ---
-import Layout from '../layouts/Layout.astro';
-import Hero from '../components/Hero.astro';
-import Services from '../components/Services.astro';
-import Contact from '../components/Contact.astro';
-
+import Layout from "../layouts/Layout.astro";
+import Hero from "../components/Hero.astro";
+import Services from "../components/Services.astro";
+import Contact from "../components/Contact.astro";
+import About from "../components/about.astro";
+import CTA from '../components/CTA.astro';
 ---
 
 <Layout title="Rivershore Trading | Industrial Supply & Maintenance">
   <main>
     <Hero />
 
-
-    <section id="about" class="py-20 bg-white">
-      <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12">
-        <div class="w-full md:w-1/2 reveal">
-          <div class="relative">
-            <img 
-              src="/about-us.jpg" 
-              alt="Rivershore Trading Operations" 
-              class="rounded-2xl shadow-2xl object-cover w-full h-[450px]"
-            />
-            <div class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-green/10 rounded-full -z-10"></div>
-          </div>
-        </div>
-
-        <div class="w-full md:w-1/2 reveal">
-          <div class="w-12 h-1 bg-brand-green mb-6"></div>
-          <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-6">
-            Excellence in Industrial <span class="text-brand-green">Trading & Maintenance</span>
-          </h2>
-          <p class="text-gray-600 leading-relaxed mb-6">
-            At Rivershore Trading, we don’t just supply materials; we build partnerships. Our integrated approach combines top-tier supply chain logistics with hands-on maintenance expertise.
-          </p>
-          <ul class="space-y-4 mb-8">
-            <li class="flex items-center gap-3 text-brand-navy font-semibold">
-              <span class="text-brand-green">✔</span> Reliability in Every Shipment
-            </li>
-            <li class="flex items-center gap-3 text-brand-navy font-semibold">
-              <span class="text-brand-green">✔</span> 24/7 Facility Support
-            </li>
-            <li class="flex items-center gap-3 text-brand-navy font-semibold">
-              <span class="text-brand-green">✔</span> Sustainable Scrap Solutions
-            </li>
-          </ul>
-          <a href="/about" class="inline-block bg-brand-navy text-white px-8 py-3 rounded-lg font-bold hover:bg-brand-navy-dark transition-all">
-            Learn More
-          </a>
-        </div>
-      </div>
-    </section>
+    <About />
 
     <Services />
 
-    <section class="py-24 bg-brand-navy text-white text-center reveal relative overflow-hidden">
-      <div class="absolute top-0 right-0 w-64 h-64 bg-brand-green/10 rounded-full blur-3xl -mr-32 -mt-32"></div>
-      <div class="relative z-10 px-6">
-        <h2 class="text-3xl md:text-5xl font-bold mb-6 tracking-tight">
-          Ready to grow your <span class="text-brand-green">business?</span>
-        </h2>
-        <p class="mb-10 text-white/80 max-w-xl mx-auto text-lg">
-          Contact us today for a free consultation and let's build something great together.
-        </p>
-        <a href="/contact" class="inline-block bg-brand-green text-brand-navy px-12 py-4 rounded-full font-bold hover:bg-white hover:shadow-2xl hover:-translate-y-1 transition-all duration-300">
-          Contact Us Today
-        </a>
-      </div>
-      <div class="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full blur-2xl -ml-24 -mb-24"></div>
-    </section>
+    <CTA />
 
     <Contact />
   </main>

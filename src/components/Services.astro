@@ -2,87 +2,107 @@
 const services = [
   {
     title: "Building Materials Supply",
-    description: "Premier distributor of high-quality Electrical, Plumbing, and HVAC systems. We bridge the gap between global manufacturers and your construction needs.",
+    description:
+      "We specialize in supplying high-grade Electrical, Plumbing, and HVAC components, ensuring our inventory meets the highest standards with timely delivery to support your projects.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
     image: "/supply.jpg",
-    link: "/services/materials"
+    link: "/services/materials",
+    linkdesc: "Our materials",
   },
   {
     title: "Building Maintenance",
-    description: "Comprehensive facility management and maintenance solutions. Our expert team ensures your infrastructure remains safe, efficient, and operational 24/7.",
+    description:
+      "Our expert team provides civil maintenance and facility management for residential and industrial projects, prioritizing safety and delivering cost-effective repair solutions.",
     icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 11-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 011 1V4z",
     image: "/maintain.webp",
-    link: "/services/maintenance"
+    link: "/services/maintenance",
+    linkdesc: "Our maintenance",
   },
   {
     title: "Scrap Trading",
-    description: "Sustainable metal and industrial scrap trading solutions. We specialize in efficient recycling processes and global commodity logistics.",
+    description:
+      "We offer comprehensive scrap management for all types of industrial materials, focusing on sustainable practices to drive operational excellence and responsible recycling.",
     image: "/scrap.jpg",
     icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
-    link: "/services/trading"
-  }
+    link: "/services/trading",
+    linkdesc: "Scrapping services",
+  },
 ];
 ---
 
-<section id="services" class="py-24 bg-gray-50 overflow-hidden">
+<section id="services" class="py-12 md:py-24 bg-white overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-20 reveal">
-      <h2 class="text-4xl font-bold mb-4" style="color: var(--brand-navy);">Our Core Business Activities</h2>
-      <div class="w-20 h-1.5 mx-auto" style="background-color: var(--brand-green);"></div>
-      <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
-        Delivering end-to-end industrial solutions with a commitment to quality and sustainability.
+      <h2
+        class="text-2xl md:text-4xl font-bold mb-4 text-brand-navy leading-tight tracking-tight"
+      >
+        Our Areas of Expertise
+      </h2>
+      <div
+        class="w-20 h-1.5 mx-auto"
+        style="background-color: var(--brand-green);"
+      >
+      </div>
+      <p
+        class="mt-4 md:mt-6 text-slate-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
+      >
+        From premium building materials to expert maintenance and sustainable
+        scrap trading, we provide comprehensive solutions for industrial
+        projects with a commitment to quality, safety, and sustainability.
       </p>
     </div>
 
-<div class="grid md:grid-cols-3 gap-12">
-  {services.map((service) => (
-    <div class="reveal"> 
-    
-      <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm h-full">
-        
-        <div class="h-72 overflow-hidden relative">
-          <img 
-            src={service.image} 
-            alt={service.title} 
-            class="w-full h-full object-cover service-img" 
-          />
-          <div class="absolute inset-0 bg-brand-navy/10"></div>
-        </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {
+        services.map((service, index) => (
+          <div class="reveal bg-slate-100 rounded-xl overflow-hidden shadow-lg border border-slate-300/50 hover:shadow-xl transition-shadow duration-300">
+            <div class="relative overflow-hidden h-48 group">
+              <img
+                src={service.image}
+                alt={service.title}
+                class="w-full h-full object-cover filter contrast-[1.05] brightness-[0.95] transition-transform duration-300 group-hover:scale-110"
+              />
+              <div class="absolute inset-0 bg-brand-navy/5" />
+            </div>
 
-        <div class="p-8 pt-0 relative">
-          <div class="icon-box w-16 h-16 bg-white rounded-xl shadow-md -mt-8 mb-6 flex items-center justify-center relative z-10">
-            <svg 
-              class="w-8 h-8" 
-              style="color: var(--brand-navy);"
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-               <path 
-                 stroke-linecap="round" 
-                 stroke-linejoin="round" 
-                 stroke-width="2" 
-                 d={service.icon}>
-               </path>
-            </svg>
+            <div class="p-6 flex flex-col">
+              <div class="icon-box w-12 h-12 bg-white rounded-lg shadow-sm mb-4 flex items-center justify-center">
+                <svg
+                  class="w-6 h-6 text-brand-navy"
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d={service.icon}
+                  />
+                </svg>
+              </div>
+
+              <h3 class="text-xl md:text-2xl font-bold mb-3 text-brand-navy leading-tight tracking-tight">
+                {service.title}
+              </h3>
+
+              <p class="text-brand-navy text-sm leading-relaxed mb-4 flex-grow">
+                {service.description}
+              </p>
+
+              <a
+                href={service.link}
+                class="text-sm font-bold flex items-center gap-2 transition-all hover:gap-3 text-brand-navy group"
+              >
+                {service.linkdesc}{" "}
+                <span class="group-hover:translate-x-1 transition-transform">
+                  →
+                </span>
+              </a>
+            </div>
           </div>
-
-          <h3 class="card-title text-2xl font-bold mb-4" style="color: var(--brand-navy);">
-            {service.title}
-          </h3>
-          
-          <p class="text-gray-600 leading-relaxed mb-6">
-            {service.description}
-          </p>
-          
-          <a href={service.link} class="font-bold flex items-center gap-2 transition-all hover:gap-4" style="color: var(--brand-navy);">
-            view more <span>→</span>
-          </a>
-        </div>
-      </div>
+        ))
+      }
     </div>
-  ))}
-</div>
-
   </div>
 </section>

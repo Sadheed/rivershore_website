@@ -1,53 +1,117 @@
 ---
-import Layout from '../../layouts/Layout.astro';
+import Layout from "../../layouts/Layout.astro";
 ---
 
 <Layout title="Building Materials Supply | Rivershore Trading">
-  <section class="relative pt-48 pb-24 bg-brand-navy">
+  <section class="relative pt-48 pb-32 bg-brand-navy">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4">Our Services</p>
-      <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">Building Materials <br/> <span class="text-white/50">Supply Chain</span></h1>
+      <nav
+        class="flex mb-12 space-x-4 text-[11px] uppercase tracking-[0.2em] font-medium"
+      >
+        <a
+          href="/services"
+          class="text-white/40 hover:text-brand-green transition-colors"
+          >Services</a
+        >
+        <span class="text-white/10">|</span>
+        <span class="text-brand-green">Supply Division</span>
+      </nav>
+
+      <h1 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+        Building Materials <br class="hidden md:block" />
+        <span class="text-white/40 font-light italic"
+          >Supply & Distribution</span
+        >
+      </h1>
+
+      <p class="text-slate-400 max-w-xl text-lg leading-relaxed">
+        We handle the procurement and delivery of essential MEP and building
+        materials for projects across Qatar. Simple, reliable supply chains for
+        your daily operational needs.
+      </p>
     </div>
   </section>
 
-  <section class="py-24 bg-white">
-    <div class="max-w-7xl mx-auto px-6">
-      
-      <div class="flex flex-col lg:flex-row items-center gap-16 mb-32">
-        <div class="w-full lg:w-1/2">
-          <img src="/elecitems.jpg" class="rounded-2xl shadow-xl h-[400px] w-full object-cover" alt="Steel and Piping" />
+  <section class="py-32 bg-white overflow-hidden">
+  <div class="max-w-7xl mx-auto px-6">
+    
+    <div class="grid lg:grid-cols-12 gap-16 items-center mb-56">
+      <div class="lg:col-span-7 relative">
+        <div class="relative z-10 w-4/5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="Industrial Electrical Stock" />
         </div>
-        <div class="w-full lg:w-1/2">
-          <h2 class="text-3xl font-bold text-brand-navy mb-6">Premium Electrical & Plumbing Solutions</h2>
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            We provide a comprehensive range of electrical components and plumbing systems sourced from world-class manufacturers. Our inventory is designed to meet the rigorous demands of large-scale construction projects.
-          </p>
-          <ul class="space-y-3">
-            <li class="flex items-center gap-3 text-brand-navy font-semibold">
-              <span class="w-1.5 h-1.5 bg-brand-green rounded-full"></span> High-Voltage Industrial Cabling
-            </li>
-            <li class="flex items-center gap-3 text-brand-navy font-semibold">
-              <span class="w-1.5 h-1.5 bg-brand-green rounded-full"></span> Specialized HVAC Piping Systems
-            </li>
-          </ul>
+        <div class="absolute top-1/2 -right-4 translate-y-[-20%] z-20 w-3/5 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="Technical Detail" />
         </div>
       </div>
 
-      <div class="flex flex-col lg:flex-row-reverse items-center gap-16">
-        <div class="w-full lg:w-1/2">
-          <img src="/plumbing2.jpg" class="rounded-2xl shadow-xl h-[400px] w-full object-cover" alt="Logistics" />
-        </div>
-        <div class="w-full lg:w-1/2">
-          <h2 class="text-3xl font-bold text-brand-navy mb-6">Seamless Supply Chain Logistics</h2>
-          <p class="text-gray-600 mb-6 leading-relaxed">
-            Timing is everything in construction. Rivershore Trading manages the entire logistics lifecycle, ensuring that your materials arrive on-site exactly when they are needed, reducing downtime and storage costs.
-          </p>
-          <div class="bg-gray-50 p-6 border-l-4 border-brand-green rounded-r-xl">
-            <p class="italic text-brand-navy font-medium">"Our average lead time is 15% faster than industry standards, thanks to our localized distribution network."</p>
-          </div>
+      <div class="lg:col-span-5">
+        <h2 class="text-4xl font-bold text-brand-navy mb-6 tracking-tighter uppercase">
+          Electrical <br/> <span class="text-brand-green">Supply</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          A wide range of electrical components sourced for durability. We ensure all parts meet 
+          the rigorous technical standards required for Qatar's industrial environment.
+        </p>
+        <div class="space-y-3 font-bold text-xs tracking-widest text-brand-navy/60 uppercase">
+          <p>• Power & Control Cabling</p>
+          <p>• Industrial Switchgear</p>
+          <p>• LED Distribution Systems</p>
         </div>
       </div>
-
     </div>
-  </section>
+
+    <div class="grid lg:grid-cols-12 gap-16 items-center mb-56">
+      <div class="lg:col-span-5 order-2 lg:order-1">
+        <h2 class="text-4xl font-bold text-brand-navy mb-6 tracking-tighter uppercase">
+          Plumbing <br/> <span class="text-brand-green">Systems</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          Reliable materials for water and fluid management. Our inventory focuses on high-grade PPR, 
+          Copper, and specialized valves for long-term project stability.
+        </p>
+        <div class="space-y-3 font-bold text-xs tracking-widest text-brand-navy/60 uppercase">
+          <p>• High-Pressure Piping</p>
+          <p>• Industrial Valve Units</p>
+          <p>• Drainage & UPVC Fittings</p>
+        </div>
+      </div>
+
+      <div class="lg:col-span-7 relative order-1 lg:order-2">
+        <div class="relative z-10 ml-auto w-4/5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+          <img src="/plumbing2.jpg" class="w-full h-full object-cover" alt="Plumbing Materials" />
+        </div>
+        <div class="absolute top-1/2 -left-4 translate-y-[-20%] z-20 w-3/5 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+          <img src="/plumbing2.jpg" class="w-full h-full object-cover shadow-inner" alt="Piping Detail" />
+        </div>
+      </div>
+    </div>
+
+    <div class="grid lg:grid-cols-12 gap-16 items-center">
+      <div class="lg:col-span-7 relative">
+        <div class="relative z-10 w-4/5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
+          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="HVAC Stock" />
+        </div>
+        <div class="absolute top-1/2 -right-4 translate-y-[-20%] z-20 w-3/5 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
+          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="Ventilation systems" />
+        </div>
+      </div>
+
+      <div class="lg:col-span-5">
+        <h2 class="text-4xl font-bold text-brand-navy mb-6 tracking-tighter uppercase">
+          HVAC & <br/> <span class="text-brand-green">Ventilation</span>
+        </h2>
+        <p class="text-lg text-slate-600 leading-relaxed mb-8">
+          Quality components for climate control. We supply everything from ductwork insulation to fan motors to keep industrial cooling systems operational.
+        </p>
+        <div class="space-y-3 font-bold text-xs tracking-widest text-brand-navy/60 uppercase">
+          <p>• Ducting & Insulation</p>
+          <p>• Refrigerant Gases</p>
+          <p>• Industrial Air Filters</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
 </Layout>
