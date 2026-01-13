@@ -1,41 +1,66 @@
 ---
-import { Image } from 'astro:assets';
-import homeBg from '../assets/homebg11.jpg'; 
+import { Image } from "astro:assets";
+import homeBg from "../assets/homebg3.webp";
 ---
-<section class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-brand-navy pt-32">
-  
-  <div class="absolute inset-0 z-0">
-    <Image 
-      src={homeBg} 
-      class="w-full h-full object-cover grayscale-[10%] brightness-[35%]" 
+
+
+<section class="relative min-h-screen flex items-center overflow-hidden bg-brand-navy pt-32">
+  <div class="absolute inset-0 z-0 lg:hidden">
+    <Image
+      src={homeBg}
+      width={1000} 
+      class="w-full h-full object-cover brightness-[35%]"
       alt="Industrial Supply Qatar"
       loading="eager"
+      decoding="sync"
     />
     <div class="absolute inset-0 bg-brand-navy/60 mix-blend-multiply"></div>
   </div>
 
-  <div class="relative z-20 text-center px-6 max-w-6xl">
-    
-    <span class="block text-brand-green font-bold tracking-[0.5em] uppercase text-[10px] md:text-[12px] mb-8">
-      Qatar's Premier Industrial Partner
-    </span>
+  <div class="relative z-20 w-full max-w-7xl mx-auto px-6 py-12 lg:py-20">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
+      <div class="text-center">
+        <span class="block text-brand-green font-bold tracking-[0.5em] uppercase text-[10px] md:text-[12px] mb-8">
+          Qatar's Premier Industrial Partner
+        </span>
 
-    <h1 class="text-5xl md:text-[90px] font-bold text-white mb-10 leading-[0.85] tracking-tighter uppercase ">
-      BUILDING <br/> 
-      <span class="text-transparent" style="-webkit-text-stroke: 1.5px rgba(255,255,255,0.8);">SUPPLY SOLUTIONS and MAINTENANCE</span>
-    </h1>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold text-white mb-8 leading-[0.9] tracking-tighter uppercase will-change-transform">
+          BUILDING <br />
+          <span class="opacity-80">SUPPLY SOLUTIONS</span><br />
+          <span class="opacity-80">and MAINTENANCE</span>
+        </h1>
 
-    <p class="text-sm md:text-lg text-white/70 mb-14 max-w-2xl mx-auto font-medium uppercase tracking-[0.1em] leading-relaxed">
-      Specialized in supplying Building Materials and their maintenance, MEP Trading, <br class="hidden md:block"/> 
-      and Professional Scrap Management.
-    </p>
+        <p class="text-sm md:text-base lg:text-lg text-white/70 mb-10 max-w-xl mx-auto font-medium uppercase tracking-[0.1em] leading-relaxed">
+          Specialized in supplying Building Materials and their maintenance, MEP
+          Trading, and Professional Scrap Management.
+        </p>
 
-    <div class="flex flex-col sm:flex-row gap-8 justify-center items-center">
-      <a href="#services" 
-         class="bg-brand-green text-brand-navy px-14 py-4 rounded-md font-extrabold uppercase text-[11px] tracking-widest transition-all hover:bg-white shadow-xl">
-        Our Services
-      </a>
+        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
+          <a
+            href="#services"
+            class="bg-brand-green text-brand-navy px-12 py-4 rounded-md font-extrabold uppercase text-[11px] tracking-widest transition-all hover:bg-white shadow-xl"
+          >
+            Our Services
+          </a>
+        </div>
+      </div>
+
+      <div class="hidden lg:block relative">
+        <div class="relative overflow-hidden rounded-lg shadow-2xl bg-brand-navy">
+          <Image
+            src={homeBg}
+            width={1200}
+            height={800}
+            class="w-full h-[500px] xl:h-[600px] object-cover brightness-[90%]"
+            alt="Industrial Supply Qatar"
+            loading="eager"
+            fetchpriority="high"
+            decoding="sync"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/20 to-transparent"></div>
+        </div>
+      </div>
     </div>
   </div>
-
 </section>

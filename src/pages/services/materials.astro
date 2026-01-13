@@ -1,27 +1,51 @@
 ---
 import Layout from "../../layouts/Layout.astro";
+
+import ServiceShowcase from '../../components/ServiceShowcase.astro';
+
+const myServices = [
+  {
+    titlePrimary: "Electrical",
+    titleAccent: "Supply",
+    description: "A wide range of electrical components sourced for durability. We ensure all parts meet the rigorous technical standards required for Qatar's industrial environment.",
+    image: "/elecitems.jpg",
+    alt: "Electrical Supply",
+    features: ["Power & Control Cabling", "Industrial Switchgear", "LED Distribution Systems"]
+  },
+  {
+    titlePrimary: "Plumbing",
+    titleAccent: "Systems",
+    description: "Reliable materials for water and fluid management. Our inventory focuses on high-grade PPR, Copper, and specialized valves for long-term project stability.",
+    image: "/plumbing2.jpg",
+    alt: "Plumbing Systems",
+    features: ["High-Pressure Piping", "Industrial Valve Units", "Drainage & UPVC Fittings"]
+  },
+  {
+    titlePrimary: "HVAC &",
+    titleAccent: "Ventilation",
+    description: "Quality components for climate control. We supply everything from ductwork insulation to fan motors to keep industrial cooling systems operational.",
+    image: "/hvac.jpg",
+    alt: "HVAC & Ventilation",
+    features: ["Ducting & Insulation", "Refrigerant Gases", "Industrial Air Filters"]
+  },
+  {
+  titlePrimary: "Mechanical &",
+  titleAccent: "Fire Systems",
+  description: "Specialized mechanical equipment for fluid motion and life safety. We source high-performance pumps and certified firefighting components to protect industrial assets.",
+  image: "/mechanical-pumps.jpg",
+  alt: "Mechanical & Fire Systems",
+  features: ["Industrial Pump Sets", "Fire Suppression Valves", "Pressure Control Units"]
+ }
+];
 ---
 
 <Layout title="Building Materials Supply | Rivershore Trading">
-  <section class="relative pt-48 pb-32 bg-brand-navy">
+  <section class="relative pt-48 pb-12 bg-brand-navy reveal">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <nav
-        class="flex mb-12 space-x-4 text-[11px] uppercase tracking-[0.2em] font-medium"
-      >
-        <a
-          href="/services"
-          class="text-white/40 hover:text-brand-green transition-colors"
-          >Services</a
-        >
-        <span class="text-white/10">|</span>
-        <span class="text-brand-green">Supply Division</span>
-      </nav>
-
-      <h1 class="text-4xl md:text-6xl font-bold text-white mb-8 tracking-tight">
+      <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4 ">Supply Division</p>
+      <h1 class="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">
         Building Materials <br class="hidden md:block" />
-        <span class="text-white/40 font-light italic"
-          >Supply & Distribution</span
-        >
+        <span class="text-white/40 font-light">Supply & Distribution</span>
       </h1>
 
       <p class="text-slate-400 max-w-xl text-lg leading-relaxed">
@@ -32,86 +56,75 @@ import Layout from "../../layouts/Layout.astro";
     </div>
   </section>
 
-  <section class="py-32 bg-white overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6">
-    
-    <div class="grid lg:grid-cols-12 gap-16 items-center mb-56">
-      <div class="lg:col-span-7 relative">
-        <div class="relative z-10 w-4/5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
-          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="Industrial Electrical Stock" />
-        </div>
-        <div class="absolute top-1/2 -right-4 translate-y-[-20%] z-20 w-3/5 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
-          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="Technical Detail" />
+<ServiceShowcase 
+  tagline="Your Trusted Supplier" 
+  services={myServices} 
+/>
+
+<section class="pb-24 bg-gray-50">
+  <div class="max-w-7xl mx-auto px-6 reveal">
+    <h3 class="text-2xl px-6 md:text-4xl font-bold text-brand-navy mb-12">
+      Material Categories
+    </h3>
+
+    <div class="grid gap-10 sm:grid-cols-2 px-6 lg:grid-cols-3">
+
+      <!-- ITEM -->
+      <div class="relative">
+        <img
+          src="/elecitems.jpg"
+          alt="Power Cables"
+          class="w-full h-72 object-cover rounded-2xl reveal"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
+          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
+            Power & Control Cables
+          </p>
         </div>
       </div>
 
-      <div class="lg:col-span-5">
-        <h2 class="text-4xl font-bold text-brand-navy mb-6 tracking-tighter uppercase">
-          Electrical <br/> <span class="text-brand-green">Supply</span>
-        </h2>
-        <p class="text-lg text-slate-600 leading-relaxed mb-8">
-          A wide range of electrical components sourced for durability. We ensure all parts meet 
-          the rigorous technical standards required for Qatar's industrial environment.
-        </p>
-        <div class="space-y-3 font-bold text-xs tracking-widest text-brand-navy/60 uppercase">
-          <p>• Power & Control Cabling</p>
-          <p>• Industrial Switchgear</p>
-          <p>• LED Distribution Systems</p>
+      <div class="relative">
+        <img
+          src="/plumbing2.jpg"
+          alt="Industrial Valves"
+          class="w-full h-72 object-cover rounded-2xl reveal"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
+          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
+            Industrial Valves
+          </p>
         </div>
       </div>
+
+      <div class="relative">
+        <img
+          src="/elecitems.jpg"
+          alt="HVAC Components"
+          class="w-full h-72 object-cover rounded-2xl reveal"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
+          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
+            HVAC Components
+          </p>
+        </div>
+      </div>
+
+      <div class="relative">
+        <img
+          src="/Scrapcollection.png"
+          alt="Recyclable Scrap Metals"
+          class="w-full h-72 object-cover rounded-2xl reveal"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
+          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
+            Recyclable Scrap Metals
+          </p>
+        </div>
+      </div>
+
     </div>
-
-    <div class="grid lg:grid-cols-12 gap-16 items-center mb-56">
-      <div class="lg:col-span-5 order-2 lg:order-1">
-        <h2 class="text-4xl font-bold text-brand-navy mb-6 tracking-tighter uppercase">
-          Plumbing <br/> <span class="text-brand-green">Systems</span>
-        </h2>
-        <p class="text-lg text-slate-600 leading-relaxed mb-8">
-          Reliable materials for water and fluid management. Our inventory focuses on high-grade PPR, 
-          Copper, and specialized valves for long-term project stability.
-        </p>
-        <div class="space-y-3 font-bold text-xs tracking-widest text-brand-navy/60 uppercase">
-          <p>• High-Pressure Piping</p>
-          <p>• Industrial Valve Units</p>
-          <p>• Drainage & UPVC Fittings</p>
-        </div>
-      </div>
-
-      <div class="lg:col-span-7 relative order-1 lg:order-2">
-        <div class="relative z-10 ml-auto w-4/5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
-          <img src="/plumbing2.jpg" class="w-full h-full object-cover" alt="Plumbing Materials" />
-        </div>
-        <div class="absolute top-1/2 -left-4 translate-y-[-20%] z-20 w-3/5 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
-          <img src="/plumbing2.jpg" class="w-full h-full object-cover shadow-inner" alt="Piping Detail" />
-        </div>
-      </div>
-    </div>
-
-    <div class="grid lg:grid-cols-12 gap-16 items-center">
-      <div class="lg:col-span-7 relative">
-        <div class="relative z-10 w-4/5 aspect-[4/5] rounded-[2rem] overflow-hidden shadow-2xl">
-          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="HVAC Stock" />
-        </div>
-        <div class="absolute top-1/2 -right-4 translate-y-[-20%] z-20 w-3/5 aspect-square rounded-[2rem] overflow-hidden shadow-2xl border-8 border-white">
-          <img src="/elecitems.jpg" class="w-full h-full object-cover" alt="Ventilation systems" />
-        </div>
-      </div>
-
-      <div class="lg:col-span-5">
-        <h2 class="text-4xl font-bold text-brand-navy mb-6 tracking-tighter uppercase">
-          HVAC & <br/> <span class="text-brand-green">Ventilation</span>
-        </h2>
-        <p class="text-lg text-slate-600 leading-relaxed mb-8">
-          Quality components for climate control. We supply everything from ductwork insulation to fan motors to keep industrial cooling systems operational.
-        </p>
-        <div class="space-y-3 font-bold text-xs tracking-widest text-brand-navy/60 uppercase">
-          <p>• Ducting & Insulation</p>
-          <p>• Refrigerant Gases</p>
-          <p>• Industrial Air Filters</p>
-        </div>
-      </div>
-    </div>
-
   </div>
 </section>
+
+
 </Layout>

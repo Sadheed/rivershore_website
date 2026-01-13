@@ -30,79 +30,70 @@ const services = [
 ];
 ---
 
-<section id="services" class="py-12 md:py-24 bg-white overflow-hidden">
+<section id="services" class="py-16 md:py-24 bg-gray-50 overflow-hidden">
   <div class="max-w-7xl mx-auto px-6">
     <div class="text-center mb-20 reveal">
-      <h2
-        class="text-2xl md:text-4xl font-bold mb-4 text-brand-navy leading-tight tracking-tight"
-      >
-        Our Areas of Expertise
-      </h2>
-      <div
-        class="w-20 h-1.5 mx-auto"
-        style="background-color: var(--brand-green);"
-      >
-      </div>
-      <p
-        class="mt-4 md:mt-6 text-slate-600 max-w-2xl mx-auto text-base md:text-lg leading-relaxed"
-      >
+      <h2 class="text-3xl px-6 md:text-4xl font-bold mb-4" style="color: var(--brand-navy);">Our Core Business Activities</h2>
+      <div class="w-20 h-1.5 mx-auto" style="background-color: var(--brand-green);"></div>
+      <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
         From premium building materials to expert maintenance and sustainable
         scrap trading, we provide comprehensive solutions for industrial
         projects with a commitment to quality, safety, and sustainability.
       </p>
     </div>
 
-    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-      {
-        services.map((service, index) => (
-          <div class="reveal bg-slate-100 rounded-xl overflow-hidden shadow-lg border border-slate-300/50 hover:shadow-xl transition-shadow duration-300">
-            <div class="relative overflow-hidden h-48 group">
-              <img
-                src={service.image}
-                alt={service.title}
-                class="w-full h-full object-cover filter contrast-[1.05] brightness-[0.95] transition-transform duration-300 group-hover:scale-110"
-              />
-              <div class="absolute inset-0 bg-brand-navy/5" />
-            </div>
+<div class="grid md:grid-cols-3 gap-12">
+  {services.map((service) => (
+    <div class="reveal"> 
+    
+      <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm h-full ">
+  
+        <div class="h-72 overflow-hidden relative">
+          <img 
+            src={service.image} 
+            alt={service.title} 
+            class="w-full h-full object-cover service-img" 
+          />
+          <div class="absolute inset-0 bg-brand-navy/10"></div>
+        </div>
 
-            <div class="p-6 flex flex-col">
-              <div class="icon-box w-12 h-12 bg-white rounded-lg shadow-sm mb-4 flex items-center justify-center">
-                <svg
-                  class="w-6 h-6 text-brand-navy"
-                  fill="none"
-                  stroke="currentColor"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
-                    d={service.icon}
-                  />
-                </svg>
-              </div>
+        <div class="p-8 pt-0 relative">
+          <div class="icon-box w-16 h-16 bg-white rounded-xl shadow-md -mt-8 mb-6 flex items-center justify-center relative z-10">
+            <svg 
+              class="w-8 h-8" 
+              style="color: var(--brand-navy);"
+              fill="none" 
+              stroke="currentColor" 
+              viewBox="0 0 24 24"
+            >
+               <path 
+                 stroke-linecap="round" 
+                 stroke-linejoin="round" 
+                 stroke-width="2" 
+                 d={service.icon}>
+               </path>
+            </svg>
+          </div>
 
-              <h3 class="text-xl md:text-2xl font-bold mb-3 text-brand-navy leading-tight tracking-tight">
-                {service.title}
-              </h3>
-
-              <p class="text-brand-navy text-sm leading-relaxed mb-4 flex-grow">
-                {service.description}
-              </p>
-
-              <a
-                href={service.link}
-                class="text-sm font-bold flex items-center gap-2 transition-all hover:gap-3 text-brand-navy group"
-              >
-                {service.linkdesc}{" "}
+          <h3 class="card-title text-2xl font-bold mb-4" style="color: var(--brand-navy);">
+            {service.title}
+          </h3>
+          
+          <p class="text-gray-600 leading-relaxed mb-6">
+            {service.description}
+          </p>
+          
+          <a href={service.link} class="font-bold flex items-center gap-2 transition-all hover:gap-4" style="color: var(--brand-navy);">
+            {service.linkdesc}{" "}
                 <span class="group-hover:translate-x-1 transition-transform">
                   →
                 </span>
-              </a>
-            </div>
-          </div>
-        ))
-      }
+          </a>
+        </div>
+      </div>
     </div>
+  ))}
+</div>
+
   </div>
 </section>

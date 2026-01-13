@@ -1,5 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import { Image } from 'astro:assets';
+import scrapperImg from '../../assets/scrapper.jpg'; 
 ---
 
 <Layout title="Scrap Trading | Rivershore Trading">
@@ -14,28 +16,199 @@ import Layout from '../../layouts/Layout.astro';
   <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-6">
       <div class="grid md:grid-cols-2 gap-16 items-center mb-32">
-        <div class="reveal">
-          <h2 class="text-3xl font-bold text-brand-navy mb-6">Turning Waste into Resources</h2>
-          <p class="text-gray-600 leading-relaxed mb-8">
-            Rivershore Trading is a leader in the collection and trading of ferrous and non-ferrous industrial scrap. We provide a bridge between industrial manufacturers and recycling plants, ensuring that materials are repurposed efficiently and ethically.
-          </p>
-          
-          <div class="grid grid-cols-2 gap-6">
-            <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-brand-green">
-              <h4 class="font-bold text-brand-navy mb-2">Ferrous Metal</h4>
-              <p class="text-xs text-gray-500 uppercase tracking-wider">Iron & Steel Alloys</p>
-            </div>
-            <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-brand-green">
-              <h4 class="font-bold text-brand-navy mb-2">Non-Ferrous</h4>
-              <p class="text-xs text-gray-500 uppercase tracking-wider">Copper, Aluminum, Brass</p>
-            </div>
-          </div>
-        </div>
+      <div class="reveal">
+        <h2 class="text-4xl font-bold text-brand-navy mb-6">
+          Turning Waste into Resources
+        </h2>
+        <p class="text-gray-600 leading-relaxed mb-8">
+          Responsible sourcing, segregation, and trading of industrial scrap
+          materials with a focus on sustainability and compliance.
+        </p>
 
-        <div class="rounded-2xl overflow-hidden shadow-2xl reveal">
-           <img src="/scrapper.jpg" alt="Industrial Scrap Metal" class="w-full h-[450px] object-cover" />
+        <!-- CATEGORY TILES -->
+        <div class="grid grid-cols-2 gap-6 reveal">
+          <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-brand-green">
+            <h4 class="font-bold text-brand-navy mb-2">Ferrous Metal</h4>
+            <p class="text-xs text-gray-500 uppercase tracking-wider">
+              Iron & Steel Alloys
+            </p>
+          </div>
+
+          <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-brand-green">
+            <h4 class="font-bold text-brand-navy mb-2">
+              AC & Battery Scrap
+            </h4>
+            <p class="text-xs text-gray-500 uppercase tracking-wider">
+              Air Conditioners & Industrial Batteries
+            </p>
+          </div>
+          <div class="p-6 bg-gray-50 rounded-xl border-l-4 border-brand-green">
+            <h4 class="font-bold text-brand-navy mb-2">
+              Non-Ferrous Metal
+            </h4>
+            <p class="text-xs text-gray-500 uppercase tracking-wider">
+              Copper, Aluminum, Brass
+            </p>
+          </div>
+
         </div>
       </div>
+
+      <!-- IMAGE -->
+      <div class="rounded-2xl overflow-hidden shadow-2xl bg-slate-200 h-[450px] relative">
+  <Image 
+    src={scrapperImg} 
+    alt="Industrial Scrap Metal"
+    width={1200} 
+    height={450}
+    decoding="async"
+    class="w-full h-full object-cover transition-opacity duration-700 opacity-0 reveal"
+    onload="this.classList.remove('opacity-0')"
+  />
+</div>
+    
+    </div>
+
+  
+    <h3 class="text-3xl font-bold text-brand-navy text-center">
+      Expert Scrap Recycling Services
+    </h3>
+  <div class="max-w-7xl mx-auto px-6 py-28 bg-white">
+
+    <!-- 3 Column Grid -->
+    <div class="grid gap-12 md:grid-cols-3">
+
+      <!-- CARD 1 -->
+      <div class="bg-gray-50 rounded-2xl p-6 flex flex-col">
+        <img
+          src="/battery-ac.jpg"
+          alt="AC & Battery Scrap"
+          class="rounded-xl h-56 w-full object-cover mb-6"
+        />
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">
+          AC & Battery Scrap
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Collection and processing of used air-conditioning units, compressors,
+          and industrial batteries following safe handling standards.
+        </p>
+      </div>
+
+      <!-- CARD 2 -->
+      <div class="bg-gray-50 rounded-2xl p-6 flex flex-col">
+        <img
+          src="/ferrous.jpg"
+          alt="Ferrous Metal Scrap"
+          class="rounded-xl h-56 w-full object-cover mb-6"
+        />
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">
+          Ferrous Metals
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Trading of iron and steel scrap sourced from demolition, fabrication,
+          and industrial dismantling operations.
+        </p>
+      </div>
+
+      <!-- CARD 3 -->
+      <div class="bg-gray-50 rounded-2xl p-6 flex flex-col">
+        <img
+          src="/nonferrous.jpg"
+          alt="Non-Ferrous Metal Scrap"
+          class="rounded-xl h-56 w-full object-cover mb-6"
+        />
+        <h3 class="text-2xl font-bold text-brand-navy mb-4">
+          Non-Ferrous Metals
+        </h3>
+        <p class="text-gray-500 text-sm leading-relaxed">
+          Handling and global trading of copper, aluminum, brass, and other
+          high-value non-ferrous materials.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+
+  <div class="max-w-7xl mx-auto px-6 py-24 bg-gray-50">
+
+    <h3 class="text-3xl font-bold text-brand-navy mb-12 text-center">
+      Scrap Materials
+    </h3>
+
+    <div class="flex flex-wrap justify-center gap-10">
+
+      <!-- ITEM -->
+      <div class="w-full sm:w-[48%] lg:w-[30%] relative">
+        <img
+          src="/scrap1.jpg"
+          class="w-full h-72 object-cover rounded-2xl"
+          alt="Copper Scrap"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
+          <p class="text-sm font-bold text-brand-navy uppercase">
+            Copper Scrap
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-[48%] lg:w-[30%] relative">
+        <img
+          src="/scrap2.jpg"
+          class="w-full h-72 object-cover rounded-2xl"
+          alt="Steel Scrap"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
+          <p class="text-sm font-bold text-brand-navy uppercase">
+            Steel Scrap
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-[48%] lg:w-[30%] relative">
+        <img
+          src="/scrap3.jpg"
+          class="w-full h-72 object-cover rounded-2xl"
+          alt="Aluminium Scrap"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
+          <p class="text-sm font-bold text-brand-navy uppercase">
+            Aluminium Scrap
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-[48%] lg:w-[30%] relative">
+        <img
+          src="/scrap4.jpg"
+          class="w-full h-72 object-cover rounded-2xl"
+          alt="Battery Scrap"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
+          <p class="text-sm font-bold text-brand-navy uppercase">
+            Battery Scrap
+          </p>
+        </div>
+      </div>
+
+      <div class="w-full sm:w-[48%] lg:w-[30%] relative">
+        <img
+          src="/scrap5.jpg"
+          class="w-full h-72 object-cover rounded-2xl"
+          alt="Mixed Industrial Scrap"
+        />
+        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
+          <p class="text-sm font-bold text-brand-navy uppercase">
+            Mixed Industrial Scrap
+          </p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+
+
 
       <div class="text-center mb-16 reveal">
         <h3 class="text-3xl font-bold text-brand-navy">Why Choose Our Trading Network?</h3>
