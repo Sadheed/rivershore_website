@@ -1,30 +1,28 @@
 ---
 import Layout from "../../layouts/Layout.astro";
-
 import ServiceShowcase from '../../components/ServiceShowcase.astro';
+import HeroSlider from '../../components/SliderHero.astro';
+
+// Import images
+import imgElec from '../../assets/elecbn1.png';
+import imgHvac from '../../assets/hvacbn.webp';
+import imgPlumb from '../../assets/plumbbn.jpg';
+
 
 const myServices = [
   {
     titlePrimary: "Electrical",
-    titleAccent: "Supply",
+    titleAccent: "& ELV",
     description: "A wide range of electrical components sourced for durability. We ensure all parts meet the rigorous technical standards required for Qatar's industrial environment.",
-    image: "/elecitems.jpg",
+    image: "/../materials/electricals.webp",
     alt: "Electrical Supply",
     features: ["Power & Control Cabling", "Industrial Switchgear", "LED Distribution Systems"]
-  },
-  {
-    titlePrimary: "Plumbing",
-    titleAccent: "Systems",
-    description: "Reliable materials for water and fluid management. Our inventory focuses on high-grade PPR, Copper, and specialized valves for long-term project stability.",
-    image: "/plumbing2.jpg",
-    alt: "Plumbing Systems",
-    features: ["High-Pressure Piping", "Industrial Valve Units", "Drainage & UPVC Fittings"]
   },
   {
     titlePrimary: "HVAC &",
     titleAccent: "Ventilation",
     description: "Quality components for climate control. We supply everything from ductwork insulation to fan motors to keep industrial cooling systems operational.",
-    image: "/hvac.jpg",
+    image: "/../materials/HVAC-Duct.jpeg",
     alt: "HVAC & Ventilation",
     features: ["Ducting & Insulation", "Refrigerant Gases", "Industrial Air Filters"]
   },
@@ -32,99 +30,51 @@ const myServices = [
   titlePrimary: "Mechanical &",
   titleAccent: "Fire Systems",
   description: "Specialized mechanical equipment for fluid motion and life safety. We source high-performance pumps and certified firefighting components to protect industrial assets.",
-  image: "/mechanical-pumps.jpg",
+  image: "/../materials/hppipe.png",
   alt: "Mechanical & Fire Systems",
   features: ["Industrial Pump Sets", "Fire Suppression Valves", "Pressure Control Units"]
- }
+ },
+  {
+    titlePrimary: "Plumbing",
+    titleAccent: "Systems",
+    description: "Reliable materials for water and fluid management. Our inventory focuses on high-grade PPR, Copper, and specialized valves for long-term project stability.",
+    image: "/../materials/hppipe.webp",
+    alt: "Plumbing Systems",
+    features: ["High-Pressure Piping", "Industrial Valve Units", "Drainage & UPVC Fittings"]
+  }
 ];
+
+const supplySlides = [
+  {
+    src: imgElec,
+    tagline: "Electrical Materials",
+    title: ["Power &", "Distribution"], // Split for the light/italic effect
+    desc: "Comprehensive electrical components for Qatar's industrial infrastructure projects."
+  },
+  {
+    src: imgHvac,
+    tagline: "HVAC Solutions",
+    title: ["Climate &", "Ventilation"],
+    desc: "Specialized cooling systems and air distribution hardware for extreme environments."
+  },
+  {
+    src: imgPlumb,
+    tagline: "Plumbing Systems",
+    title: ["Fluid &", "Piping"],
+    desc: "High-pressure piping solutions and industrial fluid management components."
+  }
+];
+
 ---
 
 <Layout title="Building Materials Supply | Rivershore Trading">
-  <section class="relative pt-48 pb-12 bg-brand-navy reveal">
-    <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4 ">Supply Division</p>
-      <h1 class="text-3xl md:text-5xl font-bold text-white mb-8 tracking-tight">
-        Building Materials <br class="hidden md:block" />
-        <span class="text-white/40 font-light">Supply & Distribution</span>
-      </h1>
-
-      <p class="text-slate-400 max-w-xl text-lg leading-relaxed">
-        We handle the procurement and delivery of essential MEP and building
-        materials for projects across Qatar. Simple, reliable supply chains for
-        your daily operational needs.
-      </p>
-    </div>
-  </section>
+  
+  <HeroSlider slides={supplySlides} />
 
 <ServiceShowcase 
-  tagline="Your Trusted Supplier" 
+  tagline="Your Trusted Partner in Delivering" 
   services={myServices} 
 />
-
-<section class="pb-24 bg-gray-50">
-  <div class="max-w-7xl mx-auto px-6 reveal">
-    <h3 class="text-2xl px-6 md:text-4xl font-bold text-brand-navy mb-12">
-      Material Categories
-    </h3>
-
-    <div class="grid gap-10 sm:grid-cols-2 px-6 lg:grid-cols-3">
-
-      <!-- ITEM -->
-      <div class="relative">
-        <img
-          src="/elecitems.jpg"
-          alt="Power Cables"
-          class="w-full h-72 object-cover rounded-2xl reveal"
-        />
-        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
-          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
-            Power & Control Cables
-          </p>
-        </div>
-      </div>
-
-      <div class="relative">
-        <img
-          src="/plumbing2.jpg"
-          alt="Industrial Valves"
-          class="w-full h-72 object-cover rounded-2xl reveal"
-        />
-        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
-          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
-            Industrial Valves
-          </p>
-        </div>
-      </div>
-
-      <div class="relative">
-        <img
-          src="/elecitems.jpg"
-          alt="HVAC Components"
-          class="w-full h-72 object-cover rounded-2xl reveal"
-        />
-        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
-          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
-            HVAC Components
-          </p>
-        </div>
-      </div>
-
-      <div class="relative">
-        <img
-          src="/Scrapcollection.png"
-          alt="Recyclable Scrap Metals"
-          class="w-full h-72 object-cover rounded-2xl reveal"
-        />
-        <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg reveal">
-          <p class="text-sm font-bold text-brand-navy uppercase tracking-wide">
-            Recyclable Scrap Metals
-          </p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
 
 
 </Layout>

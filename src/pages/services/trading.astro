@@ -1,7 +1,7 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 import { Image } from 'astro:assets';
-import scrapperImg from '../../assets/scrapper.jpg'; 
+import scrapperImg from '../../assets/scrap/scrapper.jpg'; 
 ---
 
 <Layout title="Scrap Trading | Rivershore Trading">
@@ -73,22 +73,22 @@ import scrapperImg from '../../assets/scrapper.jpg';
     <h3 class="text-3xl font-bold text-brand-navy text-center">
       Expert Scrap Recycling Services
     </h3>
-  <div class="max-w-7xl mx-auto px-6 py-28 bg-white">
+  <div class="max-w-7xl mx-auto px-6 py-18 bg-white">
 
     <!-- 3 Column Grid -->
     <div class="grid gap-12 md:grid-cols-3">
 
       <!-- CARD 1 -->
-      <div class="bg-gray-50 rounded-2xl p-6 flex flex-col">
+      <div class="bg-gray-50 rounded-2xl p-6 flex flex-col ">
         <img
-          src="/battery-ac.jpg"
+          src="/acscrap.jpg"
           alt="AC & Battery Scrap"
-          class="rounded-xl h-56 w-full object-cover mb-6"
+          class="rounded-xl h-56 w-full object-cover mb-6 reveal"
         />
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4 reveal">
           AC & Battery Scrap
         </h3>
-        <p class="text-gray-500 text-sm leading-relaxed">
+        <p class="text-gray-500 text-sm leading-relaxed reveal">
           Collection and processing of used air-conditioning units, compressors,
           and industrial batteries following safe handling standards.
         </p>
@@ -97,14 +97,14 @@ import scrapperImg from '../../assets/scrapper.jpg';
       <!-- CARD 2 -->
       <div class="bg-gray-50 rounded-2xl p-6 flex flex-col">
         <img
-          src="/ferrous.jpg"
+          src="/metal-scrap.webp"
           alt="Ferrous Metal Scrap"
-          class="rounded-xl h-56 w-full object-cover mb-6"
+          class="rounded-xl h-56 w-full object-cover mb-6 reveal"
         />
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4 reveal" >
           Ferrous Metals
         </h3>
-        <p class="text-gray-500 text-sm leading-relaxed">
+        <p class="text-gray-500 text-sm leading-relaxed reveal">
           Trading of iron and steel scrap sourced from demolition, fabrication,
           and industrial dismantling operations.
         </p>
@@ -113,14 +113,14 @@ import scrapperImg from '../../assets/scrapper.jpg';
       <!-- CARD 3 -->
       <div class="bg-gray-50 rounded-2xl p-6 flex flex-col">
         <img
-          src="/nonferrous.jpg"
+          src="/nonfe-scrap.jpg"
           alt="Non-Ferrous Metal Scrap"
-          class="rounded-xl h-56 w-full object-cover mb-6"
+          class="rounded-xl h-56 w-full object-cover mb-6 reveal"
         />
-        <h3 class="text-2xl font-bold text-brand-navy mb-4">
+        <h3 class="text-2xl font-bold text-brand-navy mb-4 reveal">
           Non-Ferrous Metals
         </h3>
-        <p class="text-gray-500 text-sm leading-relaxed">
+        <p class="text-gray-500 text-sm leading-relaxed reveal">
           Handling and global trading of copper, aluminum, brass, and other
           high-value non-ferrous materials.
         </p>
@@ -132,21 +132,21 @@ import scrapperImg from '../../assets/scrapper.jpg';
 
   <div class="max-w-7xl mx-auto px-6 py-24 bg-gray-50">
 
-    <h3 class="text-3xl font-bold text-brand-navy mb-12 text-center">
+    <h3 class="text-3xl font-bold text-brand-navy mb-12 text-center reveal">
       Scrap Materials
     </h3>
 
     <div class="flex flex-wrap justify-center gap-10">
 
       <!-- ITEM -->
-      <div class="w-full sm:w-[48%] lg:w-[30%] relative">
+      <div class="w-full sm:w-[48%] lg:w-[30%] relative ">
         <img
-          src="/scrap1.jpg"
-          class="w-full h-72 object-cover rounded-2xl"
+          src="/copper.jpg"
+          class="w-full h-72 object-cover rounded-2xl reveal"
           alt="Copper Scrap"
         />
         <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
-          <p class="text-sm font-bold text-brand-navy uppercase">
+          <p class="text-sm font-bold text-brand-navy uppercase reveal">
             Copper Scrap
           </p>
         </div>
@@ -154,12 +154,12 @@ import scrapperImg from '../../assets/scrapper.jpg';
 
       <div class="w-full sm:w-[48%] lg:w-[30%] relative">
         <img
-          src="/scrap2.jpg"
-          class="w-full h-72 object-cover rounded-2xl"
+          src="/steel.jpg"
+          class="w-full h-72 object-cover rounded-2xl reveal"
           alt="Steel Scrap"
         />
         <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
-          <p class="text-sm font-bold text-brand-navy uppercase">
+          <p class="text-sm font-bold text-brand-navy uppercase reveal">
             Steel Scrap
           </p>
         </div>
@@ -167,12 +167,12 @@ import scrapperImg from '../../assets/scrapper.jpg';
 
       <div class="w-full sm:w-[48%] lg:w-[30%] relative">
         <img
-          src="/scrap3.jpg"
-          class="w-full h-72 object-cover rounded-2xl"
+          src="/aluminium.jpg"
+          class="w-full h-72 object-cover rounded-2xl reveal"
           alt="Aluminium Scrap"
         />
         <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
-          <p class="text-sm font-bold text-brand-navy uppercase">
+          <p class="text-sm font-bold text-brand-navy uppercase reveal">
             Aluminium Scrap
           </p>
         </div>
@@ -180,12 +180,12 @@ import scrapperImg from '../../assets/scrapper.jpg';
 
       <div class="w-full sm:w-[48%] lg:w-[30%] relative">
         <img
-          src="/scrap4.jpg"
-          class="w-full h-72 object-cover rounded-2xl"
+          src="/battery.webp"
+          class="w-full h-72 object-cover rounded-2xl reveal"
           alt="Battery Scrap"
         />
         <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
-          <p class="text-sm font-bold text-brand-navy uppercase">
+          <p class="text-sm font-bold text-brand-navy uppercase reveal">
             Battery Scrap
           </p>
         </div>
@@ -193,12 +193,12 @@ import scrapperImg from '../../assets/scrapper.jpg';
 
       <div class="w-full sm:w-[48%] lg:w-[30%] relative">
         <img
-          src="/scrap5.jpg"
-          class="w-full h-72 object-cover rounded-2xl"
+          src="/mixed.jpg"
+          class="w-full h-72 object-cover rounded-2xl reveal"
           alt="Mixed Industrial Scrap"
         />
         <div class="absolute bottom-4 left-4 right-4 bg-white rounded-xl px-4 py-3 shadow-lg">
-          <p class="text-sm font-bold text-brand-navy uppercase">
+          <p class="text-sm font-bold text-brand-navy uppercase reveal">
             Mixed Industrial Scrap
           </p>
         </div>
