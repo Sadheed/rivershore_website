@@ -6,38 +6,31 @@ import Layout from '../../layouts/Layout.astro';
 
 <section class="pt-32 sm:pt-40 lg:pt-48 pb-28 bg-brand-navy text-white relative overflow-hidden">
 
-  <!-- TEXT CONTENT -->
-  <div class="max-w-7xl mx-auto px-6 relative z-10">
-    <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4 reveal">
-      Technical Services
-    </p>
-
-    <h1 class="text-4xl md:text-6xl font-bold leading-tight reveal">
-      Facility <span class="text-white/50">& Asset</span><br />
-      Maintenance
-    </h1>
+  <div class="absolute inset-0 opacity-[0.03]" 
+       style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 50px 50px;">
   </div>
 
-  <!-- ICON STRIP PANEL -->
-<div class="absolute bottom-0 right-0 w-full md:w-[45%] pointer-events-none">
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    <div class="max-w-2xl"> <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4 reveal">
+        Technical Services
+        </p>
 
-  <div
-    class="relative"
-    style="clip-path: polygon(0 24%, 100% 0, 100% 100%, 0 100%);"
-  >
+        <h1 class="text-4xl md:text-6xl font-bold leading-tight reveal">
+        Facility <span class="text-white/50">& Asset</span><br />
+        Maintenance
+        </h1>
+    </div>
+  </div>
+
+  <div class="absolute -bottom-10 -right-10 md:bottom-0 md:right-0 w-[60%] md:w-[40%] lg:w-[35%] pointer-events-none opacity-40 grayscale mix-blend-luminosity">
     <img
       src="/maintenance-icon.png"
-      alt="Maintenance Operations"
-      class="w-full h-auto opacity-80"
-      loading="lazy"
+      alt=""
+      class="w-full h-auto object-contain"
     />
-
-    <!-- soft blend -->
-    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/80 via-brand-navy/40 to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-transparent to-transparent"></div>
   </div>
-
-</div>
-
 
 </section>
 
@@ -48,103 +41,101 @@ import Layout from '../../layouts/Layout.astro';
 <section class="py-16 sm:py-20 lg:py-24 bg-white">
   <div class="max-w-7xl mx-auto px-6">
 
-    <!-- Section Heading -->
-    <div class="max-w-2xl mb-12 sm:mb-16">
-      <h2 class="text-3xl px-6 md:text-4xl font-bold text-brand-navy mb-4 reveal">
-        Maintenance Services
+    <div class="max-w-3xl mx-auto text-center mb-16">
+      <div class="inline-block w-12 h-1 bg-brand-green mb-4"></div>
+      <h2 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4 reveal">
+        Maintenance Capabilities
       </h2>
-      <p class="text-gray-600 leading-relaxed reveal px-6">
-        Structured maintenance solutions covering essential building and
-        industrial systems, delivered with safety and operational continuity
-        in mind.
+      <p class="text-gray-500 text-lg leading-relaxed reveal">
+        We deliver structured maintenance solutions covering essential building and 
+        industrial systems, ensuring safety and operational continuity.
       </p>
     </div>
 
-    <!-- Services Grid -->
-    <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
+    <div class="flex flex-wrap justify-center gap-8">
 
-      <!-- Civil Maintenance -->
-      <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow reveal">
-        <img
-          src="/maintenance/civilmt.webp"
-          alt="Civil Maintenance"
-          class="w-full h-48 object-cover rounded-xl mb-6"
-          loading="lazy"
-        />
-        <h3 class="text-xl font-semibold text-brand-navy mb-3">
+      <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] group border border-gray-100 rounded-2xl p-5 hover:shadow-xl hover:border-brand-green/30 transition-all duration-300 reveal">
+        <div class="overflow-hidden rounded-xl mb-6 h-52">
+          <img
+            src="/maintenance/civilmt.webp"
+            alt="Civil Maintenance"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors">
           Civil Maintenance
         </h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          Structural repairs, masonry works, finishing, and general civil
-          maintenance to ensure long-term building integrity.
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Structural repairs, masonry works, painting, and finishing to ensure the long-term integrity and aesthetics of your building.
         </p>
       </div>
 
-      <!-- Electrical Maintenance -->
-      <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow reveal">
-        <img
-          src="/maintenance/electricalmt.jpg"
-          alt="Electrical Maintenance"
-          class="w-full h-48 object-cover rounded-xl mb-6"
-          loading="lazy"
-        />
-        <h3 class="text-xl font-semibold text-brand-navy mb-3">
+      <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] group border border-gray-100 rounded-2xl p-5 hover:shadow-xl hover:border-brand-green/30 transition-all duration-300 reveal">
+        <div class="overflow-hidden rounded-xl mb-6 h-52">
+          <img
+            src="/maintenance/electricalmt.jpg"
+            alt="Electrical Maintenance"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors">
           Electrical Maintenance
         </h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          Inspection, troubleshooting, and maintenance of electrical systems,
-          panels, lighting, and power distribution networks.
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Inspection and troubleshooting of distribution boards, lighting systems, and power networks to prevent downtime.
         </p>
       </div>
 
-      <!-- HVAC Maintenance -->
-      <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow reveal">
-        <img
-          src="/maintenance/hvacmt.jpeg"
-          alt="HVAC Maintenance"
-          class="w-full h-48 object-cover rounded-xl mb-6"
-          loading="lazy"
-        />
-        <h3 class="text-xl font-semibold text-brand-navy mb-3">
-          HVAC Maintenance
+      <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] group border border-gray-100 rounded-2xl p-5 hover:shadow-xl hover:border-brand-green/30 transition-all duration-300 reveal">
+        <div class="overflow-hidden rounded-xl mb-6 h-52">
+          <img
+            src="/maintenance/hvacmt.jpeg"
+            alt="HVAC Maintenance"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors">
+          HVAC Solutions
         </h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          Preventive and corrective maintenance of HVAC systems to ensure
-          efficient climate control and equipment reliability.
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Preventive servicing and corrective repairs for AC units, chillers, and ducting to maximize cooling efficiency.
         </p>
       </div>
 
-      <!-- Facility Maintenance -->
-      <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow reveal">
-        <img
-          src="/maintenance/facilitymt.jpeg"
-          alt="Facility Maintenance"
-          class="w-full h-48 object-cover rounded-xl mb-6"
-          loading="lazy"
-        />
-        <h3 class="text-xl font-semibold text-brand-navy mb-3">
-          Facility Maintenance
+      <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] group border border-gray-100 rounded-2xl p-5 hover:shadow-xl hover:border-brand-green/30 transition-all duration-300 reveal">
+        <div class="overflow-hidden rounded-xl mb-6 h-52">
+          <img
+            src="/maintenance/plumbingmt.jpg"
+            alt="Plumbing Maintenance"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors">
+          Plumbing Works
         </h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          Comprehensive facility support services covering daily operations,
-          inspections, and coordinated maintenance activities.
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Comprehensive care for water supply lines, drainage systems, pumps, and sanitary fixtures.
         </p>
       </div>
 
-      <!-- Plumbing Maintenance -->
-      <div class="border border-gray-100 rounded-2xl p-6 hover:shadow-md transition-shadow reveal lg:col-span-1 lg:col-start-2">
-        <img
-          src="/maintenance/plumbingmt.jpg"
-          alt="Plumbing Maintenance"
-          class="w-full h-48 object-cover rounded-xl mb-6"
-          loading="lazy"
-        />
-        <h3 class="text-xl font-semibold text-brand-navy mb-3">
-          Plumbing Maintenance
+      <div class="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.33%-2rem)] group border border-gray-100 rounded-2xl p-5 hover:shadow-xl hover:border-brand-green/30 transition-all duration-300 reveal">
+        <div class="overflow-hidden rounded-xl mb-6 h-52">
+          <img
+            src="/maintenance/facilitymt.jpeg"
+            alt="Facility Maintenance"
+            class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+            loading="lazy"
+          />
+        </div>
+        <h3 class="text-xl font-bold text-brand-navy mb-3 group-hover:text-brand-green transition-colors">
+          General Facility Upkeep
         </h3>
-        <p class="text-sm text-gray-600 leading-relaxed">
-          Maintenance of water supply, drainage systems, fixtures, and piping
-          to ensure reliable and uninterrupted operations.
+        <p class="text-sm text-gray-500 leading-relaxed">
+          Integrated support services covering daily inspections, handyman works, and property upkeep coordination.
         </p>
       </div>
 

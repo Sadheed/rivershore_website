@@ -3,64 +3,91 @@ import { Image } from "astro:assets";
 import homeBg from "../assets/homebg3.webp";
 ---
 
-
-<section class="relative min-h-screen flex items-center overflow-hidden bg-brand-navy pt-32">
-  <div class="absolute inset-0 z-0 lg:hidden">
+<section class="relative min-h-screen flex flex-col bg-brand-navy pt-48">
+  <div class="absolute inset-0 z-0">
     <Image
       src={homeBg}
-      width={1000} 
-      class="w-full h-full object-cover brightness-[35%]"
-      alt="Industrial Supply Qatar"
+      width={1920}
+      height={1080}
+      class="w-full h-full object-cover"
+      alt="Industrial Services Qatar"
       loading="eager"
       decoding="sync"
     />
-    <div class="absolute inset-0 bg-brand-navy/60 mix-blend-multiply"></div>
+    <div class="absolute inset-0 bg-black/70"></div>
+    <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/80 to-transparent"></div>
   </div>
 
-  <div class="relative z-20 w-full max-w-7xl mx-auto px-6 py-12 lg:py-20">
-    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
-      
-      <div class="text-center">
-        <span class="block text-brand-green font-bold tracking-[0.5em] uppercase text-[10px] md:text-[12px] mb-8">
-          Qatar's Premier Industrial Partner
+  <div class="relative z-10 w-full max-w-7xl mx-auto px-6 mb-auto">
+    <div class="max-w-3xl">
+      <div class="flex items-center gap-4 mb-6">
+        <div class="h-[2px] w-12 bg-brand-green"></div>
+        <span class="text-brand-green font-bold tracking-[0.3em] uppercase text-xs">
+          Qatar's Premium
         </span>
-
-        <h1 class="text-4xl md:text-5xl lg:text-6xl xl:text-[80px] font-bold text-white mb-8 leading-[0.9] tracking-tighter uppercase will-change-transform">
-          BUILDING <br />
-          <span class="opacity-80">SUPPLY SOLUTIONS</span><br />
-          <span class="opacity-80">and MAINTENANCE</span>
-        </h1>
-
-        <p class="text-sm md:text-base lg:text-lg text-white/70 mb-10 max-w-xl mx-auto font-medium uppercase tracking-[0.1em] leading-relaxed">
-          Specialized in supplying Building Materials and their maintenance, MEP
-          Trading, and Professional Scrap Management.
-        </p>
-
-        <div class="flex flex-col sm:flex-row gap-6 justify-center items-center">
-          <a
-            href="#services"
-            class="bg-brand-green text-brand-navy px-12 py-4 rounded-md font-extrabold uppercase text-[11px] tracking-widest transition-all hover:bg-white shadow-xl"
-          >
-            Our Services
-          </a>
-        </div>
       </div>
 
-      <div class="hidden lg:block relative">
-        <div class="relative overflow-hidden rounded-lg shadow-2xl bg-brand-navy">
-          <Image
-            src={homeBg}
-            width={1200}
-            height={800}
-            class="w-full h-[500px] xl:h-[600px] object-cover brightness-[90%]"
-            alt="Industrial Supply Qatar"
-            loading="eager"
-            fetchpriority="high"
-            decoding="sync"
-          />
-          <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/20 to-transparent"></div>
+      <h1 class="text-5xl md:text-7xl font-bold text-white mb-6 leading-[1.05] uppercase tracking-tighter">
+        INDUSTRIAL TRADING <br />
+        <span class="text-brand-green">& FACILITY CARE</span>
+      </h1>
+
+      <p class="text-lg text-white/90 mb-10 max-w-xl leading-relaxed font-medium">
+        Delivering excellence in MEP Trading, Building Maintenance, and specialized Scrap Management for Qatar's infrastructure.
+      </p>
+
+      <a href="/services" class="inline-block bg-brand-green hover:bg-white text-brand-navy px-10 py-4 rounded-sm font-black uppercase text-xs tracking-widest transition-colors duration-300 shadow-xl">
+        Our Services
+      </a>
+    </div>
+  </div>
+
+  <div class="relative z-20 w-full max-w-7xl mx-auto px-6 -mb-32 mt-20">
+    <div class="grid grid-cols-1 md:grid-cols-3 bg-white shadow-2xl rounded-sm overflow-hidden border border-slate-100">
+      
+      <div class="group p-10 lg:p-14 border-b md:border-b-0 md:border-r border-slate-100 bg-white hover:bg-brand-navy transition-all duration-300 service-card-lift">
+        <div class="text-brand-green mb-6 transition-transform duration-300 group-hover:-translate-y-2">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
         </div>
+        <h3 class="text-xl font-black text-brand-navy group-hover:text-white mb-3 uppercase tracking-tight transition-colors duration-300">
+          Quality & Compliance
+        </h3>
+        <p class="text-sm text-slate-500 group-hover:text-white/70 leading-relaxed transition-colors duration-300">
+          Strict adherence to international ISO standards and Qatar’s regulatory requirements in MEP and maintenance.
+        </p>
+      </div>
+
+      <div class="group p-10 lg:p-14 border-b md:border-b-0 md:border-r border-slate-100 bg-white hover:bg-brand-navy transition-all duration-300 service-card-lift">
+        <div class="text-brand-green mb-6 transition-transform duration-300 group-hover:-translate-y-2">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-black text-brand-navy group-hover:text-white mb-3 uppercase tracking-tight transition-colors duration-300">
+          Technical Precision
+        </h3>
+        <p class="text-sm text-slate-500 group-hover:text-white/70 leading-relaxed transition-colors duration-300">
+          Leveraging advanced technical expertise to ensure your facility systems operate at peak efficiency.
+        </p>
+      </div>
+
+      <div class="group p-10 lg:p-14 bg-white hover:bg-brand-navy transition-all duration-300 service-card-lift">
+        <div class="text-brand-green mb-6 transition-transform duration-300 group-hover:-translate-y-2">
+          <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+          </svg>
+        </div>
+        <h3 class="text-xl font-black text-brand-navy group-hover:text-white mb-3 uppercase tracking-tight transition-colors duration-300">
+          Ethical Recovery
+        </h3>
+        <p class="text-sm text-slate-500 group-hover:text-white/70 leading-relaxed transition-colors duration-300">
+          Professional scrap management that prioritizes environmental responsibility and industrial recycling.
+        </p>
       </div>
     </div>
   </div>
+
 </section>

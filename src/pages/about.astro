@@ -5,194 +5,192 @@ import sectionBg from "../../src/assets/wholebg.jpg";
 ---
 
 <Layout title="About Us | Rivershore Trading">
-  <section
-    class="pt-48 pb-20 bg-brand-navy text-white overflow-hidden relative"
-  >
+  
+  <section class="pt-48 pb-20 bg-brand-navy text-white overflow-hidden relative">
     <div class="max-w-7xl mx-auto px-6 relative z-10">
-      <p
-        class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4 reveal"
-      >
+      <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4 reveal">
         Our Identity
       </p>
-      <h1 class="text-3xl md:text-5xl font-bold mb-6 reveal">
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 reveal leading-tight">
         Building the Future of <br />
-        <span class="text-white/50">Industrial Trading</span>
+        <span class="text-white/50">Industrial Trading & Care</span>
       </h1>
+      <p class="max-w-xl text-gray-400 text-lg reveal">
+        Your unified partner for MEP sourcing, facility maintenance, and sustainable scrap metal solutions.
+      </p>
     </div>
-    <div
-      class="absolute top-0 right-0 w-1/2 h-full bg-brand-green/5 skew-x-12 transform translate-x-1/4"
-    >
-    </div>
+    <div class="absolute top-0 right-0 w-1/2 h-full bg-brand-green/5 skew-x-12 transform translate-x-1/4 pointer-events-none"></div>
   </section>
 
-  <section class="py-16  sm:py-20 px-6 lg:py-24 bg-white ">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
-
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
+      
       <div class="reveal">
         <h2 class="text-4xl font-bold text-brand-navy mb-6">Our Mission</h2>
-  
-        <p class="text-gray-600 leading-relaxed pr-0 md:pr-28">
-          Our mission is to simplify industrial procurement and trading by providing consistent materials,
-          responsive support, and transparent processes that help projects move forward with confidence.
+        
+        <p class="text-gray-600 leading-relaxed text-lg mb-6 font-medium">
+          Rivershore Trading operates at the intersection of industrial capability and service excellence. We were founded to answer a specific need in the market: a partner who can seamlessly handle technical sourcing, hands-on maintenance, and resource recycling with equal proficiency.
+        </p>
+        
+        <p class="text-gray-600 leading-relaxed pr-0 md:pr-12 mb-6">
+          Our mission is to simplify the lifecycle of your projects. Whether we are sourcing critical electrical and HVAC components for new builds, providing civil maintenance to keep facilities running, or managing the <strong>responsible trading of industrial scrap metal</strong>, our focus remains the same: speed, transparency, and fair value.
+        </p>
+
+        <p class="text-gray-600 leading-relaxed pr-0 md:pr-12">
+          We believe that a modern trading company must be agile. By integrating material procurement with site services and scrap solutions, we offer a comprehensive approach that saves our clients time and maximizes their operational efficiency.
         </p>
       </div>
+
       <div class="relative reveal">
-        <div
-          class="aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl"
-        >
+        <div class="aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl relative">
+          <div class="absolute inset-0 border-2 border-white/20 z-10 m-4 rounded-xl"></div>
           <img
             src="/about_us.jpg"
-            alt="Team meeting"
+            alt="Rivershore Team"
             class="w-full h-full object-cover"
           />
         </div>
       </div>
+
     </div>
   </section>
 
-<section class="  bg-gray-200">
-<div class="relative py-20 sm:py-28 overflow-hidden bg-brand-navy  my-8">
-  
-  <div class="absolute inset-0 z-0 pointer-events-none">
-    <Image 
-      src={sectionBg} 
-      alt="" 
-      class="w-full h-full object-cover opacity-20 grayscale"
-      loading="lazy"
-    />
-    <div class="absolute inset-0 bg-gradient-to-b from-brand-navy via-brand-navy/95 to-brand-navy"></div>
-  </div>
-
-  <div class="relative z-10 max-w-7xl mx-auto px-6">
-
-    <div class="text-center mb-16 sm:mb-24 reveal">
-      <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4">
-        How We Operate
-      </p>
-      <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
-        The Rivershore Way
-      </h2>
-      <div class="h-1 w-20 bg-brand-green mx-auto"></div>
-    </div>
-
-    <div class="grid md:grid-cols-3 gap-8 lg:gap-10 px-6">
+  <section class="py-10 bg-gray-50">
+    <div class="relative py-20 sm:py-28 overflow-hidden bg-brand-navy rounded-none md:rounded-3xl max-w-[1400px] mx-auto shadow-2xl">
       
-      <div class="group bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:border-brand-green/50 reveal">
-        <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-8 text-brand-green text-2xl font-black group-hover:-translate-y-2 transition-transform">
-          01
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Integrity</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          We prioritize transparency and clear communication in every engagement,
-          ensuring our clients understand exactly what is delivered and why.
-        </p>
+      <div class="absolute inset-0 z-0 pointer-events-none">
+        <Image 
+          src={sectionBg} 
+          alt="" 
+          class="w-full h-full object-cover opacity-20 grayscale mix-blend-overlay"
+          loading="lazy"
+        />
+        <div class="absolute inset-0 bg-gradient-to-b from-brand-navy via-brand-navy/95 to-brand-navy"></div>
       </div>
 
-      <div class="group bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:border-brand-green/50 reveal">
-        <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-8 text-brand-green text-2xl font-black group-hover:-translate-y-2 transition-transform">
-          02
+      <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16 sm:mb-24 reveal">
+          <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4">
+            How We Operate
+          </p>
+          <h2 class="text-3xl sm:text-4xl font-bold text-white mb-6">
+            The Rivershore Way
+          </h2>
+          <div class="h-1 w-20 bg-brand-green mx-auto"></div>
         </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Precision</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          Our processes are built around accuracy — from material specifications
-          to delivery coordination.
-        </p>
-      </div>
 
-      <div class="group bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:border-brand-green/50 reveal">
-        <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-8 text-brand-green text-2xl font-black group-hover:-translate-y-2 transition-transform">
-          03
-        </div>
-        <h3 class="text-2xl font-bold text-white mb-4">Agility</h3>
-        <p class="text-gray-400 text-sm leading-relaxed">
-          As a focused and adaptable team, we respond quickly to evolving project
-          requirements.
-        </p>
-      </div>
-      
-    </div>
-  </div>
-</div>
+        <div class="grid md:grid-cols-3 gap-8 lg:gap-10">
+          
+          <div class="group bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:border-brand-green/50 reveal">
+            <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-8 text-brand-green text-2xl font-black group-hover:-translate-y-2 transition-transform">
+              01
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">Integrity</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              We prioritize transparency in every transaction. From pricing to delivery timelines, we ensure our clients have clear, honest information at every step.
+            </p>
+          </div>
 
-</section>
+          <div class="group bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:border-brand-green/50 reveal">
+            <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-8 text-brand-green text-2xl font-black group-hover:-translate-y-2 transition-transform">
+              02
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">Precision</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              Whether it's sourcing specific electrical components or executing a maintenance repair, our processes are built around accuracy and attention to detail.
+            </p>
+          </div>
 
-  <section class="py-16 sm:py-20 px-6 lg:py-24 bg-white ">
-  <!-- DIVIDER -->
-  <div class="max-w-7xl mx-auto px-6 mt-16 sm:mt-20 lg:mt-24">
-    <div class="w-24 h-1 bg-brand-green mb-12 mx-auto"></div>
-
-<div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
-
-   <!-- RIGHT COLUMN -->
-  <div class="relative reveal">
-    <div class="aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
-      <img
-        src="/why-choose-us.jpg"
-        alt="Why Choose Us"
-        class="w-full h-full object-cover"
-        loading="lazy"
-      />
-    </div>
-  </div>
-
-  <!-- LEFT COLUMN -->
-  <div class="space-y-8">
-    <div class="reveal">
-      <h3 class="text-2xl md:text-3xl font-bold text-brand-navy px-4 py-6">
-        Why Work With Us
-      </h3>
-    </div>
-
-    <div class="space-y-6 reveal">
-      <div class="flex items-start gap-3 text-brand-navy">
-        <span class="text-brand-green text-xl">✓</span>
-        <div>
-          <strong class="text-brand-green text-sm font-semibold block mb-1">
-            Supply
-          </strong>
-          <span class="text-sm leading-relaxed">
-            Carefully sourced electrical, plumbing, and HVAC materials
-            aligned with international standards and project specifications.
-          </span>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-3 text-brand-navy">
-        <span class="text-brand-green text-xl">✓</span>
-        <div>
-          <strong class="text-brand-green text-sm font-semibold block mb-1">
-            Maintenance
-          </strong>
-          <span class="text-sm leading-relaxed">
-            Structured building maintenance and civil works focused on
-            safety, responsiveness, and long-term functionality.
-          </span>
-        </div>
-      </div>
-
-      <div class="flex items-start gap-3 text-brand-navy">
-        <span class="text-brand-green text-xl">✓</span>
-        <div>
-          <strong class="text-brand-green text-sm font-semibold block mb-1">
-            Sustainability
-          </strong>
-          <span class="text-sm leading-relaxed">
-            Responsible scrap trading practices designed to support
-            efficient waste handling and environmentally conscious
-            operations.
-          </span>
+          <div class="group bg-white/[0.03] backdrop-blur-md rounded-2xl border border-white/10 p-8 transition-all duration-500 hover:border-brand-green/50 reveal">
+            <div class="w-14 h-14 bg-brand-green/10 rounded-xl flex items-center justify-center mb-8 text-brand-green text-2xl font-black group-hover:-translate-y-2 transition-transform">
+              03
+            </div>
+            <h3 class="text-2xl font-bold text-white mb-4">Agility</h3>
+            <p class="text-gray-400 text-sm leading-relaxed">
+              As a focused team, we adapt quickly. We respond effectively to evolving project requirements without the red tape of larger, slower organizations.
+            </p>
+          </div>
+          
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
- 
+  <section class="py-16 sm:py-20 lg:py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="w-24 h-1 bg-brand-green mb-16 mx-auto md:mx-0"></div>
 
-</div>
+      <div class="grid md:grid-cols-2 gap-12 lg:gap-16 items-start">
 
+        <div class="relative reveal order-2 md:order-1">
+          <div class="aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden shadow-xl">
+            <img
+              src="/prohandshake.jpg"
+              alt="Why Choose Us"
+              class="w-full h-full object-cover"
+              loading="lazy"
+            />
+          </div>
+          <div class="absolute -bottom-6 -left-6 w-24 h-24 bg-brand-navy/5 -z-10 rounded-full"></div>
+        </div>
 
-    
-  </div>
-</section>
+        <div class="space-y-8 order-1 md:order-2">
+          <div class="reveal">
+            <h3 class="text-3xl md:text-4xl font-bold text-brand-navy mb-4">
+              Why Partner With Us?
+            </h3>
+            <p class="text-gray-600">
+              We combine the capabilities of a trading house with the hands-on expertise of a maintenance firm.
+            </p>
+          </div>
+
+          <div class="space-y-6 reveal">
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-brand-green font-bold">✓</span>
+              </div>
+              <div>
+                <strong class="text-brand-navy text-base font-bold block mb-1">
+                  Material Sourcing
+                </strong>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Carefully procured electrical, plumbing, and HVAC materials aligned with international standards and specific project needs.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-navy/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-brand-navy font-bold">✓</span>
+              </div>
+              <div>
+                <strong class="text-brand-navy text-base font-bold block mb-1">
+                  Facility Care
+                </strong>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Structured building maintenance and civil works focused on safety, responsiveness, and extending the life of your assets.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-start gap-4">
+              <div class="w-10 h-10 rounded-full bg-brand-green/10 flex items-center justify-center flex-shrink-0 mt-1">
+                <span class="text-brand-green font-bold">✓</span>
+              </div>
+              <div>
+                <strong class="text-brand-navy text-base font-bold block mb-1">
+                  Scrap Solutions
+                </strong>
+                <p class="text-sm text-gray-500 leading-relaxed">
+                  Responsible trading of ferrous and non-ferrous metals, providing efficient waste handling and fair market valuation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
 
 </Layout>

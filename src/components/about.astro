@@ -1,57 +1,78 @@
----
-/* no props */
----
-
-<section id="about" class="pt-16 md:pt-32 py-20 bg-white">
-  <div
-    class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row items-center gap-12"
-  >
-    <div class="w-full md:w-1/2 reveal">
-      <div class="relative">
-        <img
-          src="/about11.png"
-          alt="Rivershore Trading Operations"
-          class="rounded-2xl shadow-2xl object-cover w-full h-[300px] md:h-[500px]"
-        />
-        <div
-          class="absolute -bottom-6 -right-6 w-32 h-32 bg-brand-green/10 rounded-full -z-10"
-        >
+<section id="about" class="relative pt-32 md:pt-44 bg-white">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+      
+      <div class="w-full lg:w-1/2">
+        <div class="relative">
+          <img
+            src="/aboutmain.jpg"
+            alt="Rivershore Operations"
+            class="rounded-sm shadow-xl object-cover w-full h-[350px] md:h-[450px] border-l-4 border-brand-green bg-slate-100"
+          />
+          <div class="absolute -bottom-4 -left-4 w-20 h-20 bg-brand-navy/5 -z-10"></div>
         </div>
       </div>
+
+      <div class="w-full lg:w-1/2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-6 h-[2px] bg-brand-green"></div>
+          <span class="text-brand-navy font-bold text-xs uppercase tracking-widest">About Rivershore</span>
+        </div>
+        
+        <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-5 leading-tight uppercase">
+          Comprehensive <br/>
+          <span class="text-brand-green">Trading & Maintenance</span>
+        </h2>
+        
+        <p class="text-base text-slate-600 mb-8 leading-relaxed max-w-xl">
+          Rivershore Trading is your dedicated partner for industrial and residential excellence in Qatar. 
+          We bridge the gap between sourcing essential materials and providing expert building care. 
+          Our approach is solid and reliable: we deliver the right components and quality services with speed, transparency, and integrity.
+        </p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-6 gap-y-6">
+          
+          <div class="pl-4 border-l-2 border-brand-green">
+            <h4 class="font-bold text-brand-navy uppercase text-sm mb-1">MEP Material Trading</h4>
+            <p class="text-xs text-slate-500">
+              Sourcing high-quality electrical, HVAC, and mechanical components for projects of any scale.
+            </p>
+          </div>
+
+          <div class="pl-4 border-l-2 border-brand-navy">
+            <h4 class="font-bold text-brand-navy uppercase text-sm mb-1">Building Maintenance</h4>
+            <p class="text-xs text-slate-500">
+              Expert civil works, plumbing, and system repairs ensuring your facility operates at peak efficiency.
+            </p>
+          </div>
+
+          <div class="pl-4 border-l-2 border-brand-green">
+            <h4 class="font-bold text-brand-navy uppercase text-sm mb-1">Scrap Operations</h4>
+            <p class="text-xs text-slate-500">
+              Reliable buying and selling of ferrous and non-ferrous metals with fair market valuation.
+            </p>
+          </div>
+
+          <div class="pl-4 border-l-2 border-brand-navy">
+            <h4 class="font-bold text-brand-navy uppercase text-sm mb-1">Intelligent Solutions</h4>
+            <p class="text-xs text-slate-500">
+              We go beyond the basics to offer cost-effective, tailored service that fits your specific needs.
+            </p>
+          </div>
+
+        </div>
+
+        <div class="mt-10">
+          <a
+            href="/about"
+            class="group inline-flex items-center gap-2 text-brand-navy font-bold text-xs uppercase tracking-widest hover:text-brand-green transition-colors duration-300"
+          >
+            Read Our Full Story
+            <span class="block w-4 h-[1px] bg-brand-navy group-hover:bg-brand-green group-hover:w-8 transition-all duration-300"></span>
+          </a>
+        </div>
+      </div>
+
     </div>
-
-  <div class="w-full md:w-1/2 reveal">
-  <div class="w-12 h-1 bg-brand-green mb-6"></div>
-  <h2 class="text-3xl md:text-4xl font-extrabold text-brand-navy mb-6  ">
-    Industrial Excellence <br/>
-    <span class="text-brand-green">Across Qatar</span>
-  </h2>
-  <p class="text-gray-600 leading-relaxed mb-8 text-lg">
-    Rivershore Trading provides the industrial and residential sectors with a seamless pipeline of premium materials and expert maintenance services.
-  </p>
-  <div class="grid md:grid-cols-3 gap-12">
-      <div class="space-y-4">
-        <div class="text-brand-green font-bold text-xl tracking-wide">Supply</div>
-        <p class="text-slate-600 text-sm leading-relaxed">Premium MEP materials focused on efficient procurement.</p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="text-brand-green font-bold text-xl tracking-wide">Maintenance</div>
-        <p class="text-slate-600 text-sm leading-relaxed">Expert civil works ensuring safety-first operations.</p>
-      </div>
-
-      <div class="space-y-4">
-        <div class="text-brand-green font-bold text-xl tracking-wide">Sustainability</div>
-        <p class="text-slate-600 text-sm leading-relaxed">Responsible scrap management and operational excellence.</p>
-      </div>
-    </div>
-  <a
-    href="/about"
-    class="inline-block bg-brand-navy text-white px-8 py-3 mt-6 rounded-lg font-bold text-[11px] shadow-lg"
-  >
-    Learn More
-  </a>
-</div>
-
   </div>
 </section>

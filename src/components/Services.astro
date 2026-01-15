@@ -1,99 +1,109 @@
 ---
 const services = [
   {
-    title: "Building Materials Supply",
+    title: "MEP Material Trading",
     description:
-      "We specialize in supplying high-grade Electrical, Plumbing, and HVAC components, ensuring our inventory meets the highest standards with timely delivery to support your projects.",
+      "We bridge the gap between global manufacturers and local project requirements, sourcing high-grade Electrical, Plumbing, and HVAC components with precision.",
     icon: "M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4",
-    image: "/supply.jpg",
+    image: "/servcard/Pipe-racking.webp",
     link: "/services/materials",
-    linkdesc: "Our materials",
+    linkdesc: "Explore Materials",
   },
   {
     title: "Building Maintenance",
     description:
-      "Our expert team provides civil maintenance and facility management for residential and industrial projects, prioritizing safety and delivering cost-effective repair solutions.",
+      "From routine facility management to emergency civil repairs, our technical teams ensure your industrial assets operate safely and efficiently.",
     icon: "M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 11-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 011 1V4z",
-    image: "/maintain.webp",
+    image: "/servcard/facilitycd.jpg",
     link: "/services/maintenance",
-    linkdesc: "Our maintenance",
+    linkdesc: "View Maintenance",
   },
   {
     title: "Scrap Trading",
     description:
-      "We offer comprehensive scrap management for all types of industrial materials, focusing on sustainable practices to drive operational excellence and responsible recycling.",
-    image: "/scrap.jpg",
+      "We turn waste into value. Our scrap division handles the valuation, collection, and responsible recycling of ferrous and non-ferrous industrial metals.",
+    image: "/servcard/scrapcd.webp",
     icon: "M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15",
     link: "/services/trading",
-    linkdesc: "Scrapping services",
+    linkdesc: "Trading Operations",
   },
 ];
 ---
 
-<section id="services" class="py-16 md:py-24 bg-gray-50 overflow-hidden">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="text-center mb-20 reveal">
-      <h2 class="text-3xl px-6 md:text-4xl font-bold mb-4" style="color: var(--brand-navy);">Our Core Business Activities</h2>
-      <div class="w-20 h-1.5 mx-auto" style="background-color: var(--brand-green);"></div>
-      <p class="mt-6 text-gray-600 max-w-2xl mx-auto text-lg">
-        From premium building materials to expert maintenance and sustainable
-        scrap trading, we provide comprehensive solutions for industrial
-        projects with a commitment to quality, safety, and sustainability.
+<section id="services" class="py-20 md:py-28 bg-slate-50 relative">
+  <div class="absolute inset-0 pointer-events-none opacity-[0.4]" 
+       style="background-image: radial-gradient(#94a3b8 1px, transparent 1px); background-size: 24px 24px;">
+  </div>
+
+  <div class="max-w-7xl mx-auto px-6 relative z-10">
+    
+    <div class="text-center mb-16 md:mb-20 reveal">
+      <span class="text-brand-green font-bold uppercase tracking-[0.2em] text-xs block mb-3">
+        Our Services
+      </span>
+      <h2 class="text-3xl md:text-5xl font-bold text-brand-navy mb-6">
+        Core Business Divisions
+      </h2>
+      <p class="text-slate-500 max-w-2xl mx-auto text-lg leading-relaxed">
+        Delivering integrated industrial excellence across Qatar through three dedicated business pillars.
       </p>
     </div>
 
-<div class="grid md:grid-cols-3 gap-12">
-  {services.map((service) => (
-    <div class="reveal"> 
-    
-      <div class="service-card bg-white rounded-2xl overflow-hidden shadow-sm h-full ">
-  
-        <div class="h-72 overflow-hidden relative">
-          <img 
-            src={service.image} 
-            alt={service.title} 
-            class="w-full h-full object-cover service-img" 
-          />
-          <div class="absolute inset-0 bg-brand-navy/10"></div>
-        </div>
+    <div class="grid md:grid-cols-3 gap-8 lg:gap-12">
+      {services.map((service) => (
+        <div class="reveal h-full"> 
+          <div class="group h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-2xl hover:-translate-y-2 transition-all duration-500 border border-slate-100 flex flex-col">
+      
+            <div class="h-64 overflow-hidden relative shrink-0">
+              <img 
+                src={service.image} 
+                alt={service.title} 
+                class="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
+                loading="lazy" 
+              />
+              <div class="absolute inset-0 bg-brand-navy/0 group-hover:bg-brand-navy/20 transition-colors duration-500"></div>
+            </div>
 
-        <div class="p-8 pt-0 relative">
-          <div class="icon-box w-16 h-16 bg-white rounded-xl shadow-md -mt-8 mb-6 flex items-center justify-center relative z-10">
-            <svg 
-              class="w-8 h-8" 
-              style="color: var(--brand-navy);"
-              fill="none" 
-              stroke="currentColor" 
-              viewBox="0 0 24 24"
-            >
-               <path 
-                 stroke-linecap="round" 
-                 stroke-linejoin="round" 
-                 stroke-width="2" 
-                 d={service.icon}>
-               </path>
-            </svg>
+            <div class="p-8 pt-0 relative flex flex-col flex-grow">
+              
+              <div class="w-16 h-16 bg-white rounded-xl shadow-lg -mt-8 mb-6 flex items-center justify-center relative z-10 text-brand-navy group-hover:bg-brand-green group-hover:text-white transition-all duration-300 border border-slate-50">
+                <svg 
+                  class="w-8 h-8" 
+                  fill="none" 
+                  stroke="currentColor" 
+                  viewBox="0 0 24 24"
+                >
+                   <path 
+                     stroke-linecap="round" 
+                     stroke-linejoin="round" 
+                     stroke-width="1.5" 
+                     d={service.icon}>
+                   </path>
+                </svg>
+              </div>
+
+              <h3 class="text-2xl font-bold mb-4 text-brand-navy group-hover:text-brand-green transition-colors duration-300">
+                {service.title}
+              </h3>
+              
+              <p class="text-slate-500 leading-relaxed mb-8 flex-grow text-sm md:text-base">
+                {service.description}
+              </p>
+              
+              <div class="mt-auto border-t border-slate-100 pt-6">
+                <a href={service.link} class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-brand-navy hover:text-brand-green transition-colors group/link">
+                  {service.linkdesc}
+                  <span class="transform group-hover/link:translate-x-1 transition-transform duration-300">
+                    →
+                  </span>
+                </a>
+              </div>
+              
+            </div>
           </div>
-
-          <h3 class="card-title text-2xl font-bold mb-4" style="color: var(--brand-navy);">
-            {service.title}
-          </h3>
-          
-          <p class="text-gray-600 leading-relaxed mb-6">
-            {service.description}
-          </p>
-          
-          <a href={service.link} class="font-bold flex items-center gap-2 transition-all hover:gap-4" style="color: var(--brand-navy);">
-            {service.linkdesc}{" "}
-                <span class="group-hover:translate-x-1 transition-transform">
-                  →
-                </span>
-          </a>
         </div>
-      </div>
+      ))}
     </div>
-  ))}
-</div>
 
   </div>
 </section>

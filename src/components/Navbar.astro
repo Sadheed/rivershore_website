@@ -1,10 +1,11 @@
 ---
 const pathname = new URL(Astro.url).pathname;
-const currentPath = pathname.slice(1);
+// Remove trailing slash for consistent matching
+const currentPath = pathname.replace(/\/$/, "");
 ---
 
 <nav
-  class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100"
+  class="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 transition-all duration-300"
 >
   <div
     class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-2 flex justify-between items-center"
@@ -23,54 +24,61 @@ const currentPath = pathname.slice(1);
       <li>
         <a
           href="/"
-          class={`nav-link text-brand-navy ${pathname === "/" ? "active-link" : ""}`}
-          >Home</a>
+          class={`nav-link text-brand-navy ${pathname === "/" || pathname === "" ? "active-link" : ""}`}
+        >Home</a>
       </li>
       <li>
         <a
           href="/about"
-          class={`nav-link text-brand-navy ${currentPath === "about" ? "active-link" : ""}`}
-          >About</a>
+          class={`nav-link text-brand-navy ${currentPath === "/about" ? "active-link" : ""}`}
+        >About</a>
       </li>
+      
       <li class="relative group">
         <a
           href="/services"
-          class={`nav-link text-brand-navy ${currentPath.includes("services") ? "active-link" : ""}`}
-          >Services</a
+          class={`nav-link text-brand-navy ${currentPath.includes("/services") ? "active-link" : ""}`}
         >
+          Services
+          <svg xmlns="http://www.w3.org/2000/svg" class="inline-block w-3 h-3 ml-1 mb-0.5 text-brand-green/70 group-hover:text-brand-green transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+          </svg>
+        </a>
+        
         <div
-          class="absolute top-full left-0 mt-2 w-48 bg-white/95 backdrop-blur-md rounded-md shadow-lg border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50"
+          class="absolute top-full left-0 mt-4 w-56 bg-white/95 backdrop-blur-md rounded-lg shadow-xl border border-gray-100 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:-translate-y-2 z-50"
         >
-          <div class="py-2">
+          <div class="py-3">
             <a
               href="/services/materials"
-              class="block px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-brand-navy hover:bg-brand-green/10 hover:text-brand-green transition-colors"
-              >Building Materials Trading</a
-            >
+              class="block px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-brand-navy hover:bg-brand-green/5 hover:text-brand-green hover:pl-8 transition-all duration-300 border-l-2 border-transparent hover:border-brand-green"
+            >MEP Material Trading</a>
+            
             <a
               href="/services/maintenance"
-              class="block px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-brand-navy hover:bg-brand-green/10 hover:text-brand-green transition-colors"
-              >Facility Maintenance</a
-            >
+              class="block px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-brand-navy hover:bg-brand-green/5 hover:text-brand-green hover:pl-8 transition-all duration-300 border-l-2 border-transparent hover:border-brand-green"
+            >Building Maintenance</a>
+            
             <a
               href="/services/trading"
-              class="block px-4 py-3 text-[11px] font-bold uppercase tracking-widest text-brand-navy hover:bg-brand-green/10 hover:text-brand-green transition-colors"
-              >Scrap Trading</a
-            >
+              class="block px-6 py-3 text-[10px] font-bold uppercase tracking-widest text-brand-navy hover:bg-brand-green/5 hover:text-brand-green hover:pl-8 transition-all duration-300 border-l-2 border-transparent hover:border-brand-green"
+            >Scrap Trading</a>
           </div>
         </div>
       </li>
+      
       <li>
         <a
           href="/contact"
-          class={`nav-link text-brand-navy ${currentPath === "contact" ? "active-link" : ""}`}
-          >Contact</a>
+          class={`nav-link text-brand-navy ${currentPath === "/contact" ? "active-link" : ""}`}
+        >Contact</a>
       </li>
     </ul>
 
     <button
       id="menu-btn"
-      class="md:hidden text-brand-navy p-2 focus:outline-none"
+      class="md:hidden text-brand-navy p-2 focus:outline-none z-50"
+      aria-label="Toggle Menu"
     >
       <svg
         id="menu-icon"
@@ -89,69 +97,70 @@ const currentPath = pathname.slice(1);
 
     <a
       href="/contact"
-      class="hidden md:block bg-brand-navy text-white px-8 py-3 rounded-full text-[11px] font-bold uppercase tracking-widest hover:bg-brand-navy-dark transition-all"
+      class="hidden md:flex items-center gap-2 bg-brand-navy text-white px-8 py-3 rounded-md text-[11px] font-bold uppercase tracking-widest hover:bg-brand-green hover:text-brand-navy hover:-translate-y-0.5 transition-all shadow-lg"
     >
-      Queries
+      Get Quote
     </a>
   </div>
 
   <div
     id="mobile-dropdown"
-    class="hidden md:hidden bg-white border-t border-gray-50 overflow-hidden"
+    class="hidden md:hidden bg-white border-t border-gray-100 overflow-hidden shadow-2xl absolute w-full left-0 top-full"
   >
     <div class="px-8 py-8 flex flex-col items-end space-y-6 text-right">
       <a
         href="/"
-        class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${pathname === "/" ? "active-mobile" : ""}`}
-        >Home</a
-      >
+        class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${pathname === "/" || pathname === "" ? "active-mobile" : ""}`}
+      >Home</a>
+      
       <a
         href="/about"
-        class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${currentPath === "about" ? "active-mobile" : ""}`}
-        >About Us</a
-      >
+        class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${currentPath === "/about" ? "active-mobile" : ""}`}
+      >About Us</a>
 
-      <div class="flex flex-col items-end">
+      <div class="flex flex-col items-end w-full">
         <button
           id="submenu-toggle"
-          class={`flex justify-end items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-navy ${currentPath.includes("services") ? "active-mobile" : ""}`}
+          class={`flex justify-end items-center gap-2 text-sm font-bold uppercase tracking-widest text-brand-navy w-full ${currentPath.includes("/services") ? "text-brand-green" : ""}`}
         >
-          <svg
-            class="w-4 h-4 transition-transform duration-300"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg
-          >
+          <span class="transform transition-transform duration-300" id="submenu-arrow">
+             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M19 9l-7 7-7-7"></path></svg>
+          </span>
           Services
         </button>
 
         <div
           id="submenu"
-          class="hidden flex flex-col pr-4 mt-4 space-y-4 border-r-2 border-brand-green/30 text-right"
+          class="hidden flex flex-col pr-4 mt-4 space-y-4 border-r-2 border-brand-green/30 text-right w-full"
         >
           <a
             href="/services/materials"
-            class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "services/supply" ? "text-brand-green" : "text-brand-navy/60"}`}
-            >Building Materials</a
-          >
+            class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "/services/materials" ? "text-brand-green" : "text-brand-navy/60"}`}
+          >MEP Material Trading</a>
+          
           <a
             href="/services/maintenance"
-            class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "services/maintenance" ? "text-brand-green" : "text-brand-navy/60"}`}
-            >Facility Maintenance</a
-          >
+            class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "/services/maintenance" ? "text-brand-green" : "text-brand-navy/60"}`}
+          >Building Maintenance</a>
+          
           <a
             href="/services/trading"
-            class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "services/trading" ? "text-brand-green" : "text-brand-navy/60"}`}
-            >Scrap Trading</a
-          >
+            class={`text-[11px] font-bold uppercase tracking-widest ${currentPath === "/services/trading" ? "text-brand-green" : "text-brand-navy/60"}`}
+          >Scrap Trading</a>
         </div>
       </div>
 
       <a
         href="/contact"
-        class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${currentPath === "contact" ? "active-mobile" : ""}`}
-        >Contact</a
+        class={`text-sm font-bold uppercase tracking-widest text-brand-navy mobile-link ${currentPath === "/contact" ? "active-mobile" : ""}`}
+      >Contact</a>
+      
+      <a
+        href="/contact"
+        class="w-full text-center bg-brand-navy text-white px-6 py-4 rounded-sm text-xs font-bold uppercase tracking-widest hover:bg-brand-green hover:text-brand-navy transition-all mt-4"
       >
+        Request Quote
+      </a>
     </div>
   </div>
 </nav>
@@ -179,7 +188,7 @@ const currentPath = pathname.slice(1);
     content: "";
     position: absolute;
     bottom: -4px;
-    right: 0; /* Changed left:0 to right:0 */
+    right: 0; 
     width: 24px;
     height: 2px;
     background-color: var(--brand-green);
@@ -187,28 +196,38 @@ const currentPath = pathname.slice(1);
 </style>
 
 <script>
-  // Use DOMContentLoaded to prevent "null" issues and use optional chaining ?.
   document.addEventListener("DOMContentLoaded", () => {
     const menuBtn = document.getElementById("menu-btn");
     const menuIcon = document.getElementById("menu-icon");
     const dropdown = document.getElementById("mobile-dropdown");
     const submenuToggle = document.getElementById("submenu-toggle");
     const submenu = document.getElementById("submenu");
+    const submenuArrow = document.getElementById("submenu-arrow");
 
+    // Toggle Mobile Menu
     menuBtn?.addEventListener("click", () => {
       dropdown?.classList.toggle("hidden");
+      
+      // Animate Hamburger to X
       if (menuIcon) {
-        menuIcon.style.transform = dropdown?.classList.contains("hidden")
-          ? "rotate(0deg)"
-          : "rotate(90deg)";
+        if (!dropdown?.classList.contains("hidden")) {
+           // Show X
+           menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
+           menuIcon.style.transform = "rotate(90deg)";
+        } else {
+           // Show Hamburger
+           menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
+           menuIcon.style.transform = "rotate(0deg)";
+        }
       }
     });
 
+    // Toggle Services Submenu
     submenuToggle?.addEventListener("click", () => {
       submenu?.classList.toggle("hidden");
-      const arrow = submenuToggle?.querySelector("svg");
-      if (arrow) {
-        arrow.style.transform = submenu?.classList.contains("hidden")
+      
+      if (submenuArrow) {
+        submenuArrow.style.transform = submenu?.classList.contains("hidden")
           ? "rotate(0deg)"
           : "rotate(180deg)";
       }
