@@ -1,6 +1,8 @@
 ---
+import { Image } from 'astro:assets';
+import logo from '../assets/logo3.png'; 
+
 const pathname = new URL(Astro.url).pathname;
-// Remove trailing slash for consistent matching
 const currentPath = pathname.replace(/\/$/, "");
 ---
 
@@ -15,6 +17,11 @@ const currentPath = pathname.replace(/\/$/, "");
         src="/logo.png"
         alt="Rivershore Trading Logo"
         class="h-20 md:h-28 w-auto object-contain"
+        loading="eager"
+        decoding="sync"
+        width={200}
+        height={112}
+        fetchpriority="high"
       />
     </a>
 
@@ -172,7 +179,6 @@ const currentPath = pathname.replace(/\/$/, "");
     padding-bottom: 2px;
   }
 
-  /* Desktop Underline */
   .active-link::after {
     content: "";
     position: absolute;
@@ -193,6 +199,11 @@ const currentPath = pathname.replace(/\/$/, "");
     height: 2px;
     background-color: var(--brand-green);
   }
+
+  /* Prevent layout shift */
+  nav {
+    contain: layout style;
+  }
 </style>
 
 <script>
@@ -211,11 +222,9 @@ const currentPath = pathname.replace(/\/$/, "");
       // Animate Hamburger to X
       if (menuIcon) {
         if (!dropdown?.classList.contains("hidden")) {
-           // Show X
            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>';
            menuIcon.style.transform = "rotate(90deg)";
         } else {
-           // Show Hamburger
            menuIcon.innerHTML = '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>';
            menuIcon.style.transform = "rotate(0deg)";
         }

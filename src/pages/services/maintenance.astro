@@ -1,14 +1,14 @@
 ---
 import Layout from '../../layouts/Layout.astro';
+import Image from 'astro/components/Image.astro';
+import mainticon from '../../assets/maintenance-icon.png';
 ---
 
 <Layout title="Building Maintenance | Rivershore Trading">
 
 <section class="pt-32 sm:pt-40 lg:pt-48 pb-28 bg-brand-navy text-white relative overflow-hidden">
 
-  <div class="absolute inset-0 opacity-[0.03]" 
-       style="background-image: linear-gradient(#fff 1px, transparent 1px), linear-gradient(90deg, #fff 1px, transparent 1px); background-size: 50px 50px;">
-  </div>
+
 
   <div class="max-w-7xl mx-auto px-6 relative z-10">
     <div class="max-w-2xl"> <p class="text-brand-green uppercase tracking-[0.3em] text-xs font-bold mb-4 reveal">
@@ -23,10 +23,11 @@ import Layout from '../../layouts/Layout.astro';
   </div>
 
   <div class="absolute -bottom-10 -right-10 md:bottom-0 md:right-0 w-[60%] md:w-[40%] lg:w-[35%] pointer-events-none opacity-40 grayscale mix-blend-luminosity">
-    <img
-      src="/maintenance-icon.png"
-      alt=""
+    <Image
+      src={mainticon}
+      alt="maintenance icon"
       class="w-full h-auto object-contain"
+      loading={'eager'}
     />
     <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-transparent"></div>
     <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-transparent to-transparent"></div>

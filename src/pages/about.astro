@@ -2,6 +2,8 @@
 import Layout from "../layouts/Layout.astro";
 import { Image } from "astro:assets";
 import sectionBg from "../../src/assets/wholebg.jpg";
+import about from "../../src/assets/about_us.jpg";
+
 ---
 
 <Layout title="About Us | Rivershore Trading">
@@ -28,26 +30,27 @@ import sectionBg from "../../src/assets/wholebg.jpg";
       <div class="reveal">
         <h2 class="text-4xl font-bold text-brand-navy mb-6">Our Mission</h2>
         
-        <p class="text-gray-600 leading-relaxed text-lg mb-6 font-medium">
-          Rivershore Trading operates at the intersection of industrial capability and service excellence. We were founded to answer a specific need in the market: a partner who can seamlessly handle technical sourcing, hands-on maintenance, and resource recycling with equal proficiency.
-        </p>
-        
-        <p class="text-gray-600 leading-relaxed pr-0 md:pr-12 mb-6">
-          Our mission is to simplify the lifecycle of your projects. Whether we are sourcing critical electrical and HVAC components for new builds, providing civil maintenance to keep facilities running, or managing the <strong>responsible trading of industrial scrap metal</strong>, our focus remains the same: speed, transparency, and fair value.
+        <p class="text-slate-500 leading-relaxed mb-6 max-w-prose md:text-justify text-left hyphens-auto max-w-[95%]">
+          Rivershore Trading operates at the intersection of industrial capability and service excellence. We were founded to answer a specific need: a partner who seamlessly handles technical sourcing, hands-on maintenance, and resource recycling.
         </p>
 
-        <p class="text-gray-600 leading-relaxed pr-0 md:pr-12">
+        <p class="text-slate-500 leading-relaxed mb-6 max-w-prose md:text-justify text-center text-left hyphens-auto max-w-[95%]">
+          Our mission is to simplify the lifecycle of your projects. Whether we are sourcing critical electrical and HVAC components for new builds, providing civil maintenance to keep facilities running, or managing the responsible trading of industrial scrap metal, our focus remains the same: speed, transparency, and fair value.
+        </p>
+
+        <p class="text-slate-500 leading-relaxed max-w-prose md:text-justify text-center text-left hyphens-auto max-w-[95%]">
           We believe that a modern trading company must be agile. By integrating material procurement with site services and scrap solutions, we offer a comprehensive approach that saves our clients time and maximizes their operational efficiency.
         </p>
       </div>
 
-      <div class="relative reveal">
+      <div class="eager-reveal">
         <div class="aspect-[4/3] bg-gray-100 rounded-2xl overflow-hidden shadow-2xl relative">
           <div class="absolute inset-0 border-2 border-white/20 z-10 m-4 rounded-xl"></div>
-          <img
-            src="/about_us.jpg"
+          <Image
+            src={about}
             alt="Rivershore Team"
             class="w-full h-full object-cover"
+            loading="eager"
           />
         </div>
       </div>
